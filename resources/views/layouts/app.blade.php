@@ -77,7 +77,48 @@
                 </div>
             </div>
         </nav>
+		<header class="sticky">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<a href="./" title="stratejos" class="main-logo"><img src="assets/img/foot-logo.png" alt="Logo" class="img-responsive logo-black-outline"></a>
+				</div>
+				<div class="col-sm-9">
+					<nav>
+					<ul>
+						<li><a href="javascript:void(0);" title="Features" class="nav-features">How it works</a></li>
+						<li><a href="#" title="About">About</a></li>
+						<li><a href="http://stratejos.ai/blog" title="Blog">Blog</a></li>
+                        @if (Auth::guest())
+                            <li><a href="{{ route('login') }}">Login</a></li>
+                            <li><a href="{{ route('register') }}">Register</a></li>
+                        @else
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                    {{ Auth::user()->name }} <span class="caret"></span>
+                                </a>
 
+                                <ul class="dropdown-menu" role="menu">
+                                    <li>
+                                        <a href="{{ route('logout') }}"
+                                            onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                            Logout
+                                        </a>
+
+                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                        </form>
+                                    </li>
+                                </ul>
+                            </li>
+                        @endif
+					</ul>
+					</nav>
+				</div>
+			</div>
+		</div>
+		</header>
         @yield('content')
     </div>
 
