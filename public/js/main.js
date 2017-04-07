@@ -32,13 +32,13 @@ $(window).scroll(function() {
         if ($(this).scrollTop() > 1) {
             $('header').addClass("sticky");
             $('header .main-logo img').addClass("logo-black-outline");
-            $('header .main-logo img.logo-black-outline').attr('src', 'assets/img/foot-logo.png')
+            $('header .main-logo img.logo-black-outline').attr('src', 'img/foot-logo.png')
         }
 
         else {
             $('header').removeClass("sticky");
             $('header .main-logo img').removeClass("logo-black-outline");
-            $('header .main-logo img').attr('src', 'assets/img/logo.png')
+            $('header .main-logo img').attr('src', 'img/logo.png')
         }
     }
 
