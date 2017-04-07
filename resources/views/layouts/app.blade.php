@@ -24,7 +24,7 @@
 </head>
 <body>
     <div id="main-wrapper">
-        <header class="sticky">
+        <header class="">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-3">

@@ -84,7 +84,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-3 col-xs-12 col-xss-12">
-                        <img src="assets/img/foot-logo.png" alt="Logo" class="img-responsive foot-logo">
+                        <img src="{{ asset('img/foot-logo.png') }}" alt="Logo" class="img-responsive foot-logo">
                     </div>
                     <div class="col-sm-3 col-xs-4 col-xss-12">
                         <h5>product</h5>
@@ -124,7 +124,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-6 col-xs-6 col-xss-12">
-                        <p>© 2016-2017 Stratejos All Right Reserved </p>
+                        <p>Copyright 2016-2017 Stratejos All Right Reserved </p>
                     </div>
                     <div class="col-sm-6 col-xs-6 col-xss-12">
                         <ul>
