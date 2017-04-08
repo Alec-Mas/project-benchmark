@@ -28,7 +28,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-sm-3">
-                        <a href="./" title="stratejos" class="main-logo"><img src="{{ asset('img/foot-logo.png') }}" alt="Logo" class="img-responsive logo-black-outline"></a>
+                        <a href="./" title="stratejos" class="main-logo"><img src="{{ asset('img/logo.png') }}" alt="Logo" class="img-responsive logo-black-outline"></a>
                     </div>
                     <div class="col-sm-9">
                         <nav>
