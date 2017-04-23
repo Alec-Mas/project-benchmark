@@ -110,7 +110,12 @@ header.sticky nav li a.free-trial:hover{ color: #fff; background: #F57421; borde
 .mobile-nav #primary-nav-trigger.open span:nth-child(4) { top: 18px; width: 0%; left: 50%;}
 
 /*hero*/
-.main-hero{ background: #F57421; color: #fff; text-align: left; position: relative; background-image: url('#'); background-position: center center; background-repeat: no-repeat; background-size: cover; float: left; width: 100%; padding-bottom: 60px;}
+.main-hero{ background: #F57421; color: #fff; text-align: left; position: relative; background-image: url(''); background-position: center center; background-repeat: no-repeat; background-size: cover; float: left; width: 100%; padding-bottom: 60px;}
+
+.form-hero {
+    background: #F57421;
+    color: #121212;
+}
 
 @media(min-width:768px) {
     .main-hero-text {margin-top: 225px;}

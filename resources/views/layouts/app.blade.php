@@ -14,6 +14,10 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    
+    <link href="{{ asset('css/media.css') }}" rel="stylesheet">
+    
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 
     <!-- Scripts -->
     <script>
@@ -35,7 +39,6 @@
                             <ul>
                                 <li><a href="javascript:void(0);" title="Features" class="nav-features">How it works</a></li>
                                 <li><a href="#" title="About">About</a></li>
-                                <li><a href="http://stratejos.ai/blog" title="Blog">Blog</a></li>
                                 @if (Auth::guest())
                                 <li><a href="{{ url('/login') }}" rel="nofollow" title="Login">Login</a></li>
                                 <li><a href="{{ url('/register') }}" rel="nofollow" title="Sign up" class="free-trial">Sign up</a></li>
@@ -66,6 +69,28 @@
                 </div>
             </div>
         </header>
+        <!--/. header ends-->
+        
+        <div class="mobile-nav">
+            <a href="#" title="nOps" class="main-logo"><img src="{{ asset('img/foot-logo.png') }}" alt="Logo"></a>
+            <a id="primary-nav-trigger" href="javascript:void(0);">
+                <span></span><span></span><span></span><span></span>
+            </a>
+        </div>
+
+        <nav class="primary-nav">
+            <div class="container">
+                <div class="row">
+                    <ul class="col-sm-12 col-xs-12">
+                        <h3>Product</h3>
+                        <li><a href="javascript:void(0);" title="Pricing">How it works</a></li>
+                        <li><a href="#" title="About">About</a></li>
+                        <li><a href="{{ url('/login') }}" rel="nofollow" title="Login">Login</a></li>
+                        <li><a href="{{ url('/register') }}" rel="nofollow" title="Sign up">Sign up</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
         @yield('content')
     </div>
 
