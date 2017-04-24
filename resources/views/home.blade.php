@@ -1,19 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 
 @section('content')
-<section class="form-hero">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default main-hero-text">
-                    <div class="panel-heading">Dashboard</div>
-
-                    <div class="panel-body">
-                        You are logged in!
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+<main class="col-sm-9 offset-sm-3 col-md-10 offset-md-2 pt-3">
+    <h1>Dashboard</h1>
+    <p>Hi {{Auth::user()->name}}. You are logged in!</p>
+    <p>Dashboard features coming soon.</p>
+</main>
 @endsection
