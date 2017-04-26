@@ -4,8 +4,8 @@
 
         <div class="row">
             <div class="col-md-6  main-hero-text">
-                <h1>{{ trans('message.slogan') }}</h1>
-                <p>{{ trans('message.slogansubtitle') }}</p>
+                <h1>smart assistant for benchmarking projects</h1>
+                <p>See how your project is performing.</p>
                 <a href="https://onboarding.stratejos.com" rel="nofollow" class="try-free" title="Create a new team">Find out how - it's free</a>
                 <small>&nbsp;</small>
             </div>
@@ -122,7 +122,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-6 col-xs-6 col-xss-12">
-                    <p>Copyright 2016-2017 Stratejos All Right Reserved </p>
+                    <p>Copyright &copy; {{Carbon\Carbon::now()->year}} Stratejos All Right Reserved </p>
                 </div>
                 <div class="col-sm-6 col-xs-6 col-xss-12">
                     <ul>

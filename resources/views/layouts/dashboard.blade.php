@@ -142,6 +142,34 @@
                             <a href="#">
                                 <i class="fa fa-dashboard"></i> <span>Dashboard</span>
                             </a>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-folder"></i> <span>Project Management</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="fa fa-circle-o"></i>Add a Project</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i>Current Projects</a></li>
+                            </ul>
+                        </li>
+                        <li class="treeview">
+                            <a href="#">
+                                <i class="fa fa-pie-chart"></i>
+                                <span>Benchmark Reports</span>
+                                <span class="pull-right-container">
+                                    <i class="fa fa-angle-left pull-right"></i>
+                                </span>
+                            </a>
+                            <ul class="treeview-menu">
+                                <li><a href="#"><i class="fa fa-circle-o"></i>ChartJS</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i>Morris</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i>Flot</a></li>
+                                <li><a href="#"><i class="fa fa-circle-o"></i>Inline Charts</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </section>
                 <!-- /.sidebar -->
@@ -152,7 +180,7 @@
             <!-- /.content-wrapper -->
             <footer class="main-footer">
                 <div class="pull-right hidden-xs">
-                    <b>Version</b> 2.3.8
+                    <b>Version</b> 0.1
                 </div>
                 <strong>Copyright &copy; {{Carbon\Carbon::now()->year}} <a href="http://stratejos.ai">Stratejos</a>.</strong> All rights
                 reserved.

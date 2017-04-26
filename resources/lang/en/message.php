@@ -14,4 +14,5 @@ return [
 
     'slogan'                  => 'smart assistant for benchmarking projects',
     'slogansubtitle'          => 'See how your project is performing.',
+    'version'                 => '0.1',
 ];
