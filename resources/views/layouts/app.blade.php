@@ -19,7 +19,9 @@
     <link href="{{ asset('css/media.css') }}" rel="stylesheet">
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-
+    
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Scripts -->
     <script>
         window.Laravel = {
@@ -41,18 +43,19 @@
                     <div class="col-sm-9">
                         <nav>
                             <ul>
-                                <li><a href="javascript:void(0);" title="Features" class="nav-features">How it works</a></li>
-                                <li><a href="#" title="About">About</a></li>
+                                <li><a href="javascript:void(0);" title="Features" class="nav-features">Project-Benchmark Tool</a></li>
+                                <li><a href="javascript:void(0);" class="scroll-benefits" >About</a></li>
                                 @if (Auth::guest())
-                                <li><a href="{{ url('/login') }}" rel="nofollow" title="Login">Login</a></li>
-                                <li><a href="{{ url('/register') }}" rel="nofollow" title="Sign up" class="free-trial">Sign up</a></li>
                                 @else
                                 <li class="dropdown">
                                     <a href="#" class="dropdown-toggle free-trial" data-toggle="dropdown" role="button" aria-expanded="false">
                                             {{ Auth::user()->name }} <span class="caret"></span>
                                         </a>
 
-                                    <ul class="dropdown-menu" role="menu">
+                                    <ul class="dropdown-menu" role="menu">  
+                                        <li>
+                                            <a href="{{ url('home') }}">Dashboard</a>
+                                        </li>
                                         <li>
                                             <a href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -99,7 +102,7 @@
                 <div class="row">
                     <ul class="col-sm-12 col-xs-12">
                         <h3>Product</h3>
-                        <li><a href="javascript:void(0);" title="Pricing">How it works</a></li>
+                        <li><a href="javascript:void(0);" title="Pricing">Benchmark</a></li>
                         <li><a href="#" title="About">About</a></li>
                         <li><a href="{{ url('/login') }}" rel="nofollow" title="Login">Login</a></li>
                         <li><a href="{{ url('/register') }}" rel="nofollow" title="Sign up">Sign up</a></li>
@@ -113,7 +116,10 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
-
+    <!-- jQuery -->
+    <script src="http://thecodeplayer.com/uploads/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+    <!-- jQuery easing plugin -->
+    <script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js" type="text/javascript"></script>
 </body>
 
 </html>

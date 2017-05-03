@@ -4,9 +4,9 @@
 
         <div class="row">
             <div class="col-md-6  main-hero-text">
-                <h1>smart assistant for benchmarking projects</h1>
+                <h1>use stratejos to benchmark project performance</h1>
                 <p>See how your project is performing.</p>
-                <a href="https://onboarding.stratejos.com" rel="nofollow" class="try-free" title="Create a new team">Find out how - it's free</a>
+                <a href="javascript:void(0);" class="try-free scroll-benefits">Find out how - it's free</a>
                 <small>&nbsp;</small>
             </div>
 
@@ -17,7 +17,7 @@
             </div>
         </div>
     </div>
-    <a href="javascript:void(0);" class="scroll-bottom" id="scroll-benefits"><i class="ion-chevron-down"></i></a>
+    <a href="javascript:void(0);" class="scroll-bottom scroll-benefits"><i class="ion-chevron-down"></i></a>
 </section>
 <!--/. hero ends-->
 
@@ -26,11 +26,11 @@
         <div class="row">
             <div class="col-sm-4 col-xs-12">
                 <div class="benefits-wrapper">
-                    <h3>Automate <br>project reporting</h3>
+                    <h3>Real-time <br>project data</h3>
                     <div class="benefits-image">
                         <!--<img src="img/automate-project-reports.png" alt="Know the real status" class="img-responsive">-->
                     </div>
-                    <p>Save time building the same old status report, let stratejos provide you interactive dashboards and reports in real-time.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin metus et dui imperdiet, a volutpat nunc facilisis.</p>
                 </div>
             </div>
 
@@ -40,7 +40,7 @@
                     <div class="benefits-image">
                         <!--<img src="img/analyse-team-performance.png" alt="Know the problems" class="img-responsive">-->
                     </div>
-                    <p>Learn more about your teams and individuals with dashboards, reports and metrics that give you measurable views of performance.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin metus et dui imperdiet, a volutpat nunc facilisis.</p>
                 </div>
             </div>
 
@@ -50,7 +50,7 @@
                     <div class="benefits-image">
                         <!--<img src="img/auto-identify-risks.png" alt="auto-identify risks + auto-follow up" class="img-responsive">-->
                     </div>
-                    <p>Learn about problems ahead of time, avoid tediously sifting through project data each day and avoid nagging team mates.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin metus et dui imperdiet, a volutpat nunc facilisis.</p>
                 </div>
             </div>
 
@@ -70,8 +70,44 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12">
-                <h2>Stratejos helps you benchmark projects.<br> Agile, waterfall, ad-hoc, ongoing, you name it.</h2>
+                <h2>Benchmark your project performance right now!</h2>
+            <!-- multistep form -->
+            <form id="msform">
+                    <!-- progressbar -->
+                    <ul id="progressbar">
+                            <li class="active">Scope</li>
+                            <li>Budget</li>
+                            <li>Report</li>
+                    </ul>
+                    <!-- fieldsets -->
+                    <fieldset>
+                            <p class="fs-title">Project Scope</p>
+                            <p class="fs-subtitle">Let's begin!</p>
+                            <input type="text" name="type" placeholder="Project Type" />
+                            <input type="text" name="type" placeholder="Project Industry" />
+                            <input type="number" name="type" placeholder="Assigned Team Members" />
+                            <input type="date" name="type" placeholder="Start-Date" alt="Start-Date" />
+                            <input type="date" name="type" placeholder="End-Date" alt="End-Date" />
+                            <input type="button" name="next" class="next action-button" value="Next" />
+                    </fieldset>
+                    <fieldset>
+                            <p class="fs-title">Budget</p>
+                            <p class="fs-subtitle">Don't lie!</p>
+                            <input type="number" name="original-budget" placeholder="Original Budget" />
+                            <input type="number" name="actual-budget" placeholder="Actual Budget" />
+                            <input type="button" name="previous" class="previous action-button" value="Previous" />
+                            <input type="button" name="next" class="next action-button" value="Next" />
+                    </fieldset>
+                    <fieldset>
+                            <p class="fs-title">Generate Report</p>
+                            <p class="fs-subtitle">We'll send it to you.</p>
+                            <input type="email" name="email" placeholder="Email Address" />
+                            <input type="button" name="previous" class="previous action-button" value="Previous" />
+                            <input type="submit" name="submit" class="submit action-button" value="Benchmark" />
+                    </fieldset>
+            </form>     
             </div>
+
         </div>
     </div>
 </section>
@@ -85,13 +121,11 @@
                     <img src="{{ asset('img/foot-logo.png') }}" alt="Logo" class="img-responsive foot-logo">
                 </div>
                 <div class="col-sm-3 col-xs-4 col-xss-12">
-                    <h5>product</h5>
+                    <h5>tool</h5>
                     <ul>
-                        <li><a href="#features" title="Features">Features</a></li>
-                        <li><a href="#pricing" title="Pricing">Pricing</a></li>
-                        <li><a href="./about" title="About">About</a></li>
-                        <li><a href="https://marketplace.atlassian.com/plugins/stratejos/cloud/overview" rel="nofollow" title="Signup">Signup</a></li>
-                        <li><a href="https://app.stratejos.com" rel="nofollow" title="Login">Login</a></li>
+                        <li><a href="javascript:void(0);" class="scroll-benefits" title="Features">Features</a></li>
+                        <li><a href="javascript:void(0);" class="nav-features" title="About">Benchmark</a></li>
+                        <li><a href="{{url('login')}}" rel="nofollow" title="Login">Admin</a></li>
                     </ul>
                 </div>
 
@@ -99,10 +133,7 @@
                     <h5>Resources</h5>
                     <ul>
                         <li><a href="http://stratejos.ai/blog/" title="Blog">Blog</a></li>
-                        <li><a href="https://support.stratejos.ai/hc/en-us" title="Documentation" rel="nofollow">Documentation</a></li>
-                        <li><a href="https://support.stratejos.ai/hc/en-us" title="Help &amp; Support" rel="nofollow">Help &amp; Support</a></li>
-                        <!--<li><a href="javascript:void(0);" title="API">API</a></li>-->
-                        <li><a href="https://support.stratejos.ai/hc/en-us/sections/205129188-FAQ" title="FAQ" rel="nofollow">FAQ</a></li>
+                        <li><a href="#" title="Documentation" rel="nofollow">Documentation</a></li>
                     </ul>
                 </div>
 

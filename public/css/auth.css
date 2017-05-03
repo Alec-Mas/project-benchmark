@@ -78,6 +78,7 @@ body {
 a {
     color: white;
 }
+
 label {
     color: white;
 }
@@ -87,3 +88,11 @@ label {
     border-color: white;
     -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, .3);
 }
+
+.btn-primary:hover {
+    color: white;
+    background-color: #F57421;
+    border-color: white;
+    -webkit-box-shadow: 0 0 40px rgba(0, 0, 0, .3);
+}
+
