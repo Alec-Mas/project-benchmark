@@ -17,6 +17,8 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 
     <link href="{{ asset('css/media.css') }}" rel="stylesheet">
+	
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     
@@ -34,88 +36,38 @@
 
 <body>
     <div id="main-wrapper">
-        <header class="">
-            <div class="container">
-                <div class="row">
-                    <div class="col-sm-3">
-                        <a href="./" title="stratejos" class="main-logo"><img src="{{ asset('img/logo.png') }}" alt="Logo" class="img-responsive logo-black-outline"></a>
-                    </div>
-                    <div class="col-sm-9">
-                        <nav>
-                            <ul>
-                                <li><a href="javascript:void(0);" title="Features" class="nav-features">Project-Benchmark Tool</a></li>
-                                <li><a href="javascript:void(0);" class="scroll-benefits" >About</a></li>
-                                @if (Auth::guest())
-                                @else
-                                <li class="dropdown">
-                                    <a href="#" class="dropdown-toggle free-trial" data-toggle="dropdown" role="button" aria-expanded="false">
-                                            {{ Auth::user()->name }} <span class="caret"></span>
-                                        </a>
+	<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <a class="navbar-brand" href="#">Navbar</a>
 
-                                    <ul class="dropdown-menu" role="menu">  
-                                        <li>
-                                            <a href="{{ url('home') }}">Dashboard</a>
-                                        </li>
-                                        <li>
-                                            <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                                    Logout
-                                                </a>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#">Disabled</a>
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
 
-                                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                                {{ csrf_field() }}
-                                            </form>
-                                        </li>
-                                    </ul>
-                                </li>
-                                @endif
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-            </div>
-
-            <script>
-                window.trans = <?php
-                // copy all translations from /resources/lang/CURRENT_LOCALE/* to global JS variable
-                $lang_files = File::files(resource_path() . '/lang/' . App::getLocale());
-                $trans = [];
-                foreach ($lang_files as $f) {
-                    $filename = pathinfo($f)['filename'];
-                    $trans[$filename] = trans($filename);
-                }
-                echo json_encode($trans);
-                ?>;
-            </script>
-        </header>
-        <!--/. header ends-->
-
-        <div class="mobile-nav">
-            <a href="#" title="nOps" class="main-logo"><img src="{{ asset('img/foot-logo.png') }}" alt="Logo"></a>
-            <a id="primary-nav-trigger" href="javascript:void(0);">
-                <span></span><span></span><span></span><span></span>
-            </a>
-        </div>
-
-        <nav class="primary-nav">
-            <div class="container">
-                <div class="row">
-                    <ul class="col-sm-12 col-xs-12">
-                        <h3>Product</h3>
-                        <li><a href="javascript:void(0);" title="Pricing">Benchmark</a></li>
-                        <li><a href="#" title="About">About</a></li>
-                        <li><a href="{{ url('/login') }}" rel="nofollow" title="Login">Login</a></li>
-                        <li><a href="{{ url('/register') }}" rel="nofollow" title="Sign up">Sign up</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
         @yield('content')
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <!-- jQuery -->
     <script src="http://thecodeplayer.com/uploads/js/jquery-1.9.1.min.js" type="text/javascript"></script>
     <!-- jQuery easing plugin -->
