@@ -16,7 +16,6 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin metus et dui imperdiet, a volutpat nunc facilisis.</p>
 				<h3>Auto-identify risks<br>+ Auto follow up</h3>
                     <div class="benefits-image">
-                        <!--<img src="img/auto-identify-risks.png" alt="auto-identify risks + auto-follow up" class="img-responsive">-->
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin metus et dui imperdiet, a volutpat nunc facilisis.</p>
                 </div>
