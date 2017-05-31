@@ -37,11 +37,36 @@
                                         <!-- fieldsets <input type="text" name="type" placeholder="Project Type" />-->
                                         <select name="Project Type">
                                                 <option value="Project Type" disabled selected>Project Type</option>
-                                                <option value="1">1</option>
-                                                <option value="2">2</option>
+                                                <option value="Web Development">Web Development</option>
+                                                <option value="Mobile Application">Mobile Application</option>
+												<option value="Video Game Application">Video Game Application</option>
+                                                <option value="Java Application">Java Application</option>
+												<option value="Software Development">Software Development</option>
+												<option value="Database Development">Database Development</option>
+                                                <option value="Other">Other</option>
                                         </select>
-                                        <input type="text" name="type" placeholder="Project Industry" />
-                                        <input type="number" name="type" placeholder="Assigned Team Members" />
+										<select name="Project Industry">
+                                                <option value="Project Industry" disabled selected>Project Industry</option>
+                                                <option value="Accounting">Accounting</option>
+                                                <option value="Construction">Construction</option>
+												<option value="Retail">Retail</option>
+                                                <option value="Food and Services">Food and Services</option>
+												<option value="Information Technology">Information Technology</option>
+												<option value="Medicine">Medicine</option>
+												<option value="Sport">Sport</option>
+                                                <option value="Research and Development">Research and Development</option>
+												<option value="Law">Law</option>
+                                                <option value="Engineering">Engineering</option>
+                                                <option value="Other">Other</option>
+                                        </select>
+										<select name="Assigned Team Members">
+                                                <option value="Assigned Team Members" disabled selected>Assigned Team Members</option>
+                                                <option value="1-5">1-5</option>
+                                                <option value="5-10">5-10</option>
+												<option value="10-20">10-20</option>
+                                                <option value="20-50">20-50</option>
+												<option value="50+">50+</option>
+                                        </select>
                                         <input onfocus="(this.type='date')" class="js-form-control" placeholder="Expected Date"/>
                                         <input onfocus="(this.type='date')" class="js-form-control" placeholder="Actual Date"/>
                                         <input type="button" name="next" class="next action-button" value="Next" />
