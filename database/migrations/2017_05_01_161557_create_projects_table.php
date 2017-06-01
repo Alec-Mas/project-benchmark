@@ -15,16 +15,13 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->increments('id');
-			$table->string('project_name');
-			$table->string('project_type');
-			$table->string('project_industry');
-			$table->integer('project_team');
-			$table->date('project_start');
-			$table->date('project_date_estimate');
-			$table->date('project_date_actual');
-			$table->decimal('project_budget_estimate');
-			$table->decimal('project_budget_actual');
-            $table->timestamps();
+            $table->string('project_industry');
+            $table->integer('project_team');
+            $table->date('project_start');
+            $table->date('project_date_estimate');
+            $table->date('project_date_actual');
+            $table->decimal('project_budget_estimate');
+            $table->decimal('project_budget_actual');
         });
     }
 

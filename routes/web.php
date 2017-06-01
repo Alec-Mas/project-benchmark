@@ -19,6 +19,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/Benchmark', function () {
-    return view('Benchmark');
-});
+Route::post('/generate-report', [
+    'uses' => 'BenchmarkController@addProject',
+    'as' => 'submit-report'
+]);
+

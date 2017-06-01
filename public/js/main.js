@@ -66,78 +66,6 @@ $(window).scroll(function() {
 });
 
 
-
-
-
-$(".scroll-benefits").click(function() {
-
-    $('html, body').animate({
-        scrollTop: $("#benefits-section").offset().top
-    }, 700);
-
-});
-
-$("#scroll-how-it-helps, .nav-features").click(function() {
-
-    $('html, body').animate({
-        scrollTop: $("#how-it-helps-section").offset().top
-    }, 700);
-
-});
-
-$("#scroll-integrations").click(function() {
-
-    $('html, body').animate({
-        scrollTop: $("#integrations-section").offset().top
-    }, 700);
-
-});
-
-$("#scroll-pricing, .nav-pricing").click(function() {
-
-    $('html, body').animate({
-        scrollTop: $("#pricing-section").offset().top
-    }, 700);
-
-});
-
-// about-us-page-buttons
-
-$("#scroll-about-us, .nav-about-us").click(function() {
-
-    $('html, body').animate({
-        scrollTop: $("#about-us-section").offset().top
-    }, 700);
-
-});
-
-$("#scroll-team, .nav-team").click(function() {
-
-    $('html, body').animate({
-        scrollTop: $("#team-section").offset().top
-    }, 700);
-
-});
-
-// about-us-page-team-descriptions
-$(document).ready(function(){
-
-    $('.team .wrapper li').on({
-        click: function() {
-            var memberId = this.dataset.memberId;
-
-            $('.team .wrapper li').removeClass('active');
-            $('[data-member-id="' + memberId + '"]').addClass('active');
-
-            $(".detailed-description").hide(0, function() {
-                $('[data-desc-id="' + memberId + '"]').show();
-            });
-        }
-    });
-
-});
-
-
 //jQuery time
 var current_fs, next_fs, previous_fs; //fieldsets
 var left, opacity, scale; //fieldset properties which we will animate
@@ -212,7 +140,3 @@ $(".previous").click(function(){
 		easing: 'easeInOutBack'
 	});
 });
-
-$(".submit").click(function(){
-	return false;
-})
