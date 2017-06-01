@@ -84,7 +84,7 @@
                                         <p class="fs-subtitle">We'll send it to you.</p>
                                         <input type="email" name="email" placeholder="Email Address" />
                                         <input type="button" name="previous" class="previous action-button" value="Previous" />
-                                        <input type="submit" name="submit" class="submit action-button" value="Benchmark" />
+                                        <input type="submit" name="submit" onclick="location.href='{{ url('Benchmark') }}'" class="submit action-button" value="Benchmark" />
                                 </fieldset>
                         </form>     
                     </div>
