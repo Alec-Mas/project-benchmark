@@ -28,6 +28,7 @@ class BenchmarkController extends Controller
             'project_id' => $new_project->id,
         ]);
         
-        return view('benchmark');
+        return view('benchmark')
+                ->with(['project' => Project::find($new_project->id)]);
     }
 }

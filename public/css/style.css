@@ -305,3 +305,7 @@ body {
     color: white;
     z-index: -1;
 }
+
+.benchmark-table {
+    color: white;
+}
