@@ -11,14 +11,14 @@
                             <div class="feture-image">
                                 <i class="fa fa-5x fa-tachometer" aria-hidden="true"></i>                            
                             </div>
-                            <p class="feature-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin metus et dui imperdiet, a volutpat nunc facilisis.</p>
+                            <p class="feature-description">gain a real advantage and see how your project is performing against hundreds of other projects.</p>
                         </div>
                         <div class="feature-wrapper">
                             <h2 class="feature-title">accurate project statistics</h2>
                             <div class="feture-image">
                                 <i class="fa fa-5x fa-gears" aria-hidden="true"></i>                            
                             </div>
-                            <p class="feature-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sollicitudin metus et dui imperdiet, a volutpat nunc facilisis.</p>
+                            <p class="feature-description">generate advanced statistics about your project to help assist in better business decisions.</p>
                         </div>
                     </div>
                     <div class="col-sm-8">

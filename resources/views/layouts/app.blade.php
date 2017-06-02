@@ -29,10 +29,8 @@
 <body>
     <div id="main-wrapper">
         <div class="parent2">
-            <div class="test1"><i class="fa fa-user fa-2x"></i></div>
-            <div class="test2"><i class="fa fa-graduation-cap fa-2x"></i></div>
-            <div class="test3"><i class="fa fa-code fa-2x"></i></div>
-            <div class="test4"><i class="fa fa-envelope-o fa-2x"></i></div>
+            <a href="{{url('http://www.stratejos.ai')}}" class="test3"><i class="fa fa-external-link fa-2x"></i></a>
+            <a href="mailto:hello@stratejos.ai" class="test4"><i class="fa fa-envelope-o fa-2x"></i></a>
             <div class="mask2"><i class="fa fa-home fa-3x"></i></div>
         </div>
         <div class="main-body">
