@@ -23,6 +23,3 @@ Route::post('/generate-report', [
     'uses' => 'BenchmarkController@addProject',
     'as' => 'submit-report'
 ]);
-Route::get('/Benchmark', function () {
-    return view('Benchmark');
-});
