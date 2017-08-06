@@ -12,7 +12,7 @@ return [
     | any other location as required by the application or its packages.
     */
 
-    'name' => 'Project-Benchmark-App',
+    'name' => env('APP_NAME', 'Laravel'),
 
     /*
     |--------------------------------------------------------------------------
@@ -103,7 +103,7 @@ return [
     |
     */
 
-    'key' => env('APP_KEY', 'base64:aXjCjwlkLaWXB/8P3ZwtYhUpNpKyrjOnQXAP6FO3WZU='),
+    'key' => env('APP_KEY'),
 
     'cipher' => 'AES-256-CBC',
 

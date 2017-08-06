@@ -7,6 +7,8 @@
 
 require('./bootstrap');
 
+window.Vue = require('vue');
+
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
@@ -15,10 +17,22 @@ require('./bootstrap');
 
 Vue.component('example', require('./components/Example.vue'));
 
-const app = new Vue({
-    el: '#app'
-});
+//global registration
+import VueFormWizard from 'vue-form-wizard'
+import 'vue-form-wizard/dist/vue-form-wizard.min.css'
+Vue.use(VueFormWizard)
 
-Vue.prototype.trans = (key) => {
-    return _.get(window.trans, key, key);
-};
+//local registration
+import {FormWizard, TabContent, WizardButton, WizardStep} from 'vue-form-wizard'
+import 'vue-form-wizard/dist/vue-form-wizard.min.css'
+//component code
+components: {
+  FormWizard,
+  TabContent,
+  WizardButton,
+  WizardStep
+}
+
+const app = new Vue({
+    el: '#form'
+});
