@@ -14311,7 +14311,7 @@ window.Vue = __webpack_require__(3);
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', __webpack_require__(62));
+Vue.component('wizard', __webpack_require__(62));
 
 
 
@@ -45238,9 +45238,9 @@ var Component = __webpack_require__(63)(
   /* moduleIdentifier (server only) */
   null
 )
-Component.options.__file = "A:\\Programs\\wamp64\\www\\project-benchmark\\resources\\assets\\js\\components\\Example.vue"
+Component.options.__file = "A:\\Programs\\wamp64\\www\\project-benchmark\\resources\\assets\\js\\components\\wizard.vue"
 if (Component.esModule && Object.keys(Component.esModule).some(function (key) {return key !== "default" && key.substr(0, 2) !== "__"})) {console.error("named exports are not supported in *.vue files.")}
-if (Component.options.functional) {console.error("[vue-loader] Example.vue: functional components are not supported with templates, they should use render functions.")}
+if (Component.options.functional) {console.error("[vue-loader] wizard.vue: functional components are not supported with templates, they should use render functions.")}
 
 /* hot reload */
 if (false) {(function () {
@@ -45249,9 +45249,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-6ea11589", Component.options)
+    hotAPI.createRecord("data-v-71022a08", Component.options)
   } else {
-    hotAPI.reload("data-v-6ea11589", Component.options)
+    hotAPI.reload("data-v-71022a08", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -45449,7 +45449,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             }, 1000);
         };
         return {
-            formInline: {
+            scope: {
                 name: '',
                 industry: '',
                 size: '',
@@ -45538,7 +45538,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             var _this = this;
 
             return new Promise(function (resolve, reject) {
-                _this.$refs.ruleForm.validate(function (valid) {
+                _this.$refs.scopeForm.validate(function (valid) {
                     resolve(valid);
                 });
             });
@@ -45571,27 +45571,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('form-wizard', {
     attrs: {
-      "title": "see how your project performed.",
-      "subtitle": "In just a few simple steps.",
+      "title": "",
+      "subtitle": "",
       "shape": "circle",
       "color": "#F57421",
-      "error-color": "#ff4949"
+      "error-color": "#ff0000"
     },
     on: {
       "on-complete": _vm.onComplete
     }
   }, [_c('tab-content', {
     attrs: {
-      "title": "personal details",
+      "title": "Project Scope",
       "icon": "ti-search",
       "before-change": _vm.validateFirstStep
     }
   }, [_c('el-form', {
-    ref: "ruleForm",
+    ref: "scopeForm",
     staticClass: "demo-form-inline",
     attrs: {
       "inline": false,
-      "model": _vm.formInline,
+      "model": _vm.scope,
       "rules": _vm.rules
     }
   }, [_c('el-form-item', {
@@ -45603,11 +45603,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "placeholder": "What's the name of your project?"
     },
     model: {
-      value: (_vm.formInline.name),
+      value: (_vm.scope.name),
       callback: function($$v) {
-        _vm.formInline.name = $$v
+        _vm.scope.name = $$v
       },
-      expression: "formInline.name"
+      expression: "scope.name"
     }
   })], 1), _vm._v(" "), _c('el-form-item', {
     attrs: {
@@ -45618,11 +45618,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "placeholder": "Project Industry"
     },
     model: {
-      value: (_vm.formInline.industry),
+      value: (_vm.scope.industry),
       callback: function($$v) {
-        _vm.formInline.industry = $$v
+        _vm.scope.industry = $$v
       },
-      expression: "formInline.industry"
+      expression: "scope.industry"
     }
   })], 1), _vm._v(" "), _c('el-form-item', {
     attrs: {
@@ -45633,11 +45633,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "placeholder": "Team Size"
     },
     model: {
-      value: (_vm.formInline.size),
+      value: (_vm.scope.size),
       callback: function($$v) {
-        _vm.formInline.size = _vm._n($$v)
+        _vm.scope.size = _vm._n($$v)
       },
-      expression: "formInline.size"
+      expression: "scope.size"
     }
   })], 1), _vm._v(" "), _c('el-form-item', {
     attrs: {
@@ -45651,11 +45651,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "placeholder": "Project Start Date"
     },
     model: {
-      value: (_vm.formInline.startdate),
+      value: (_vm.scope.startdate),
       callback: function($$v) {
-        _vm.formInline.startdate = $$v
+        _vm.scope.startdate = $$v
       },
-      expression: "formInline.startdate"
+      expression: "scope.startdate"
     }
   })], 1)]), _vm._v(" "), _c('el-form-item', {
     attrs: {
@@ -45669,11 +45669,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "placeholder": "Estimated End Date"
     },
     model: {
-      value: (_vm.formInline.enddate),
+      value: (_vm.scope.enddate),
       callback: function($$v) {
-        _vm.formInline.enddate = $$v
+        _vm.scope.enddate = $$v
       },
-      expression: "formInline.enddate"
+      expression: "scope.enddate"
     }
   })], 1)]), _vm._v(" "), _c('el-form-item', {
     attrs: {
@@ -45687,11 +45687,11 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
       "placeholder": "Actual End Date"
     },
     model: {
-      value: (_vm.formInline.actualdate),
+      value: (_vm.scope.actualdate),
       callback: function($$v) {
-        _vm.formInline.actualdate = $$v
+        _vm.scope.actualdate = $$v
       },
-      expression: "formInline.actualdate"
+      expression: "scope.actualdate"
     }
   })], 1)])], 1)], 1), _vm._v(" "), _c('tab-content', {
     attrs: {
@@ -45789,7 +45789,7 @@ module.exports.render._withStripped = true
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-     require("vue-hot-reload-api").rerender("data-v-6ea11589", module.exports)
+     require("vue-hot-reload-api").rerender("data-v-71022a08", module.exports)
   }
 }
 

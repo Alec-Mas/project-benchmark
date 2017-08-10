@@ -16,20 +16,26 @@
 
 </head>
 <body>
-    <header class="fixed">
+    <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
-            <div class="row">
-                <div class="col-sm-3">
-                    <a href="./" title="stratejos" class="main-logo"><img src="img/foot-logo.png" alt="Logo" class="img-responsive logo-black-outline"></a>
-                </div>
-                <div class="col-sm-9">
-                    <nav>
-                    </nav>
-                </div>
+            <div class="navbar-header">
+                <!-- Branding Image -->
+                <a class="navbar-brand" href="#">
+                    <img src="{{ asset('img/foot-logo.png') }}">
+                </a>
             </div>
         </div>
-    </header>
+    </nav>
+
     @yield('content')
+
+    <div class="row" style="padding-top: 50px;"></div>
+
+    <nav class="navbar navbar-default navbar-static-bottom">
+        <div class="container">
+            <p><div class="center-block">Keen to improve performance? Get an AI project management assistant!</div></p>
+        </div>
+    </nav>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>

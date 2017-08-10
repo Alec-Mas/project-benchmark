@@ -20,40 +20,38 @@ body {
     /* Opera 11.10+ */
     //background: linear-gradient(90deg, #FF934D 10%, #F57421 90%);
     /* W3C */
-
     background: #F57421;
-    padding-top: 70px;
 }
 
-header.fixed {
-    background: rgba(255,255,255,.991);
-    height: 70px;
-    -webkit-box-shadow: 0 0 3px 0 rgba(0,0,0,.2);
-    -moz-box-shadow: 0 0 3px 0 rgba(0,0,0,.2);
-    box-shadow: 0 0 3px 0 rgba(0,0,0,.2);
+.navbar-default {
+    height: 90px;
 }
 
-header {
-    height: 95px;
-    position: relative;
-    background: transparent;
-    width: 100%;
-    float: left;
-    z-index: 60;
-    position: fixed;
-    top: 0;
-    transition: all 0.4s ease;
-    -moz-transition: all 0.4s ease;
-    -webkit-transition: all 0.4s ease;
-    -webkit-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
-    backface-visibility: hidden;
+.navbar-static-bottom {
+    text-align: center;
+
+    margin-bottom: 0;
+    border-radius: 0;
+    height: 35px;
+}
+
+.center-block {
+    margin-right: auto;
+    margin-left: auto;
 }
 
 /* Landing Page Title */
 
 .page-title {
-    font-size: 60px;
+    font-size: 40px;
+    font-weight: bold;
+    color: ghostwhite;
+    text-align: center;
+}
+
+.page-subtitle {
+    font-size: 30px;
+    font-weight: lighter;
     color: ghostwhite;
     text-align: center;
 }

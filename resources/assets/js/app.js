@@ -15,7 +15,7 @@ window.Vue = require('vue');
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-Vue.component('example', require('./components/Example.vue'));
+Vue.component('wizard', require('./components/wizard.vue'));
 
 import ElementUI from 'element-ui'
 import locale from 'element-ui/lib/locale/lang/en'
