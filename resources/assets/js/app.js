@@ -17,6 +17,12 @@ window.Vue = require('vue');
 
 Vue.component('example', require('./components/Example.vue'));
 
+import ElementUI from 'element-ui'
+import locale from 'element-ui/lib/locale/lang/en'
+import 'element-ui/lib/theme-default/index.css'
+
+Vue.use(ElementUI, { locale })
+
 //global registration
 import VueFormWizard from 'vue-form-wizard'
 import 'vue-form-wizard/dist/vue-form-wizard.min.css'

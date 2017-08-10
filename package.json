@@ -19,6 +19,8 @@
     "vue": "^2.4.2"
   },
   "dependencies": {
-    "vue-form-wizard": "^0.6.2"
+    "element-ui": "^1.4.1",
+    "vue-form-wizard": "^0.6.2",
+    "vue-template-compiler": "^2.4.2"
   }
 }

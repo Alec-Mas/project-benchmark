@@ -4,7 +4,7 @@
         <h1 class="page-title">project performance tool</h1>
     </div>
     <div class="row">
-        <div class="container" style="background:white;">
+        <div class="container benchmark-form">
             <div id="form">
                 <example></example>
             </div>

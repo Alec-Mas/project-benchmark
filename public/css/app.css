@@ -8357,7 +8357,6 @@ body {
   /* Opera 11.10+ */
   /* W3C */
   background: #F57421;
-  min-height: 2000px;
   padding-top: 70px;
 }
 
@@ -8401,5 +8400,16 @@ header {
   color: #F57421 !important;
   background-color: #FFF !important;
   border-color: #F57421 !important;
+}
+
+.forward-button {
+  color: #FFF !important;
+  background-color: #F57421 !important;
+  border-color: #F57421 !important;
+}
+
+.benchmark-form {
+  background: white;
+  max-width: 650px;
 }
 
