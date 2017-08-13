@@ -26,16 +26,17 @@
             </div>
         </div>
     </nav>
-
-    @yield('content')
+    <div id="wrap">
+        @yield('content')
+    </div>
 
     <div class="row" style="padding-top: 50px;"></div>
 
-    <nav class="navbar navbar-default navbar-static-bottom">
-        <div class="container">
-            <p><div class="center-block">Keen to improve performance? Get an AI project management assistant!</div></p>
-        </div>
-    </nav>
+    <div id="footer">
+      <div class="container">
+          <p><div class="center-block">Keen to improve performance? Get an AI project management assistant!</div></p>
+      </div>
+    </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
