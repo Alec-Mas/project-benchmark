@@ -24,6 +24,7 @@ import locale from 'element-ui/lib/locale/lang/en'
 import 'element-ui/lib/theme-default/index.css'
 
 Vue.use(ElementUI, { locale })
+Vue.config.lang = 'en';
 
 //global registration
 import VueFormWizard from 'vue-form-wizard'

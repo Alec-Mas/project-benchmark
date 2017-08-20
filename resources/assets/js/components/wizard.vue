@@ -17,19 +17,19 @@
             </el-form-item>
             <el-form-item prop="startdate">
                 <div class="block">
-                    <el-date-picker v-model="scope.startdate" type="date" placeholder="Project Start Date">
+                    <el-date-picker v-model="scope.startdate" format="yy-MM-dd" type="date" placeholder="Project Start Date">
                     </el-date-picker>
                 </div>
             </el-form-item>
             <el-form-item prop="enddate">
                 <div class="block">
-                    <el-date-picker v-model="scope.enddate" type="date" placeholder="Estimated End Date">
+                    <el-date-picker v-model="scope.enddate" format="yy-MM-dd" type="date" placeholder="Estimated End Date">
                     </el-date-picker>
                 </div>
             </el-form-item>
             <el-form-item prop="actualdate">
                 <div class="block">
-                    <el-date-picker v-model="scope.actualdate" type="date" placeholder="Actual End Date">
+                    <el-date-picker v-model="scope.actualdate" format="yy-MM-dd" type="date" placeholder="Actual End Date">
                     </el-date-picker>
                 </div>
             </el-form-item>

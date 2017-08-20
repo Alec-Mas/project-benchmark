@@ -16,9 +16,18 @@ class ProjectController extends Controller
         $project_name = $request['s']['name'];
         $project_industry = $request['s']['industry'];
         $project_size = $request['s']['size'];
+
         $project_start = $request['s']['startdate'];
+        $project_start = preg_replace("/\([^)]+\)/","",$project_start);
+        $project_start = Carbon::parse($project_start);
+
         $project_end = $request['s']['enddate'];
+        $project_end = preg_replace("/\([^)]+\)/","",$project_end);
+        $project_end = Carbon::parse($project_end);
+
         $project_actual_end = $request['s']['actualdate'];
+        $project_actual_end = preg_replace("/\([^)]+\)/","",$project_actual_end);
+        $project_actual_end = Carbon::parse($project_actual_end);
 
         // Second tab
         $project_budget = $request['b']['start'];

@@ -14318,6 +14318,7 @@ Vue.component('wizard', __webpack_require__(62));
 
 
 Vue.use(__WEBPACK_IMPORTED_MODULE_0_element_ui___default.a, { locale: __WEBPACK_IMPORTED_MODULE_1_element_ui_lib_locale_lang_en___default.a });
+Vue.config.lang = 'en';
 
 //global registration
 
@@ -45668,6 +45669,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "block"
   }, [_c('el-date-picker', {
     attrs: {
+      "format": "yy-MM-dd",
       "type": "date",
       "placeholder": "Project Start Date"
     },
@@ -45686,6 +45688,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "block"
   }, [_c('el-date-picker', {
     attrs: {
+      "format": "yy-MM-dd",
       "type": "date",
       "placeholder": "Estimated End Date"
     },
@@ -45704,6 +45707,7 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
     staticClass: "block"
   }, [_c('el-date-picker', {
     attrs: {
+      "format": "yy-MM-dd",
       "type": "date",
       "placeholder": "Actual End Date"
     },
