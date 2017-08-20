@@ -3,8 +3,8 @@
 <template>
 
 <form-wizard title="" subtitle="" @on-complete="onComplete" shape="circle" color="#F57421" error-color="#ff0000">
-    <!--<tab-content title="Project Scope" icon="ti-search" :before-change="validateFirstStep">-->
-    <tab-content title="Project Scope" icon="ti-search">
+    <tab-content title="Project Scope" icon="ti-search" :before-change="validateFirstStep">
+    <!--<tab-content title="Project Scope" icon="ti-search">-->
         <el-form :inline="false" :model="scope" class="demo-form-inline" :rules="rules" ref="scopeForm">
             <el-form-item prop="name">
                 <el-input v-model="scope.name" placeholder="What's the name of your project?"></el-input>
@@ -36,8 +36,8 @@
         </el-form>
 
     </tab-content>
-    <!--<tab-content title="Project Budget" icon="ti-money" :before-change="validateSecondStep">-->
-    <tab-content title="Project Budget" icon="ti-money">
+    <tab-content title="Project Budget" icon="ti-money" :before-change="validateSecondStep">
+    <!--<tab-content title="Project Budget" icon="ti-money">-->
         <el-form :inline="false" :model="budget" class="demo-form-inline" :rules="rules" ref="budgetForm">
             <el-form-item prop="start">
                 <el-input v-model.number="budget.start" type="number" placeholder="How much was your budget?"></el-input>
