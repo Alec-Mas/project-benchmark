@@ -3,8 +3,8 @@
 <template>
 
 <form-wizard title="" subtitle="" @on-complete="onComplete" shape="circle" color="#F57421" error-color="#ff0000">
-    <tab-content title="Project Scope" icon="ti-search" :before-change="validateFirstStep">
-    <!--<tab-content title="Project Scope" icon="ti-search">-->
+    <!--<tab-content title="Project Scope" icon="ti-search" :before-change="validateFirstStep">-->
+    <tab-content title="Project Scope" icon="ti-search">
         <el-form :inline="false" :model="scope" class="demo-form-inline" :rules="rules" ref="scopeForm">
             <el-form-item prop="name">
                 <el-input v-model="scope.name" placeholder="What's the name of your project?"></el-input>
@@ -13,7 +13,7 @@
                 <el-input v-model="scope.industry" placeholder="Project Industry"></el-input>
             </el-form-item>
             <el-form-item prop="size">
-                <el-input v-model.number="scope.size" placeholder="Team Size"></el-input>
+                <el-input v-model.number="scope.size" type="number" placeholder="Team Size"></el-input>
             </el-form-item>
             <el-form-item prop="startdate">
                 <div class="block">
@@ -36,14 +36,14 @@
         </el-form>
 
     </tab-content>
-    <tab-content title="Project Budget" icon="ti-money" :before-change="validateSecondStep">
-    <!--<tab-content title="Project Budget" icon="ti-money">-->
+    <!--<tab-content title="Project Budget" icon="ti-money" :before-change="validateSecondStep">-->
+    <tab-content title="Project Budget" icon="ti-money">
         <el-form :inline="false" :model="budget" class="demo-form-inline" :rules="rules" ref="budgetForm">
             <el-form-item prop="start">
-                <el-input v-model.number="budget.start" placeholder="How much was your budget?"></el-input>
+                <el-input v-model.number="budget.start" type="number" placeholder="How much was your budget?"></el-input>
             </el-form-item>
             <el-form-item prop="actual">
-                <el-input v-model.number="budget.actual" placeholder="What's did you actually spend?"></el-input>
+                <el-input v-model.number="budget.actual" type="number" placeholder="What's did you actually spend?"></el-input>
             </el-form-item>
         </el-form>
     </tab-content>
@@ -58,6 +58,7 @@
     <el-button type="primary" class="previous-button" slot="prev">Back</el-button>
     <el-button type="primary" class="forward-button" slot="next">Next</el-button>
     <el-button type="success" slot="finish">Finish</el-button>
+
 </form-wizard>
 
 </template>
@@ -165,7 +166,24 @@ export default {
         },
         methods: {
             onComplete: function() {
-                alert('Yay. Done!');
+
+                $.ajax({
+                    method: 'POST', // Type of response and matches what we said in the route
+                    url: 'generate-report', // This is the url we gave in the route
+                    data: {
+                        _token: $('meta[name="csrf-token"]').attr('content'),
+                        s: this.scope,
+                        b: this.budget,
+                        f: this.finalise,
+                    }, // a JSON object to send back
+                    success: function(response){ // What to do if we succeed
+                        console.log(response);
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) { // What to do if we fail
+                        console.log(JSON.stringify(jqXHR));
+                        console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
+                    }
+                });
             },
             validateFirstStep() {
                 return new Promise((resolve, reject) => {

@@ -7,6 +7,8 @@
 
 require('./bootstrap');
 
+
+
 window.Vue = require('vue');
 
 /**
@@ -40,5 +42,5 @@ components: {
 }
 
 const app = new Vue({
-    el: '#form'
+    el: '#form',
 });
