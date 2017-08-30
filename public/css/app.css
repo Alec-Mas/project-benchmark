@@ -5678,8 +5678,11 @@ tbody.collapse.in {
   }
 
   .navbar-right {
-    float: right !important;
-    margin-right: -15px;
+    float: right ;
+    margin-right: 20px;
+	margin-top: 30px;
+	font-weight: lighter !important;
+	font-size: 16px;	
   }
 
   .navbar-right ~ .navbar-right {
@@ -8429,6 +8432,48 @@ body {
   background-color: #F57421 !important;
   border-color: #F57421 !important;
 }
+
+.navbar-header-button {
+  color: #FFF !important;
+  background-color: #F57421 !important;
+  border-color: #F57421 !important;
+  border-radius: 2px !important;
+  border: 1px !important;
+  float: right !important;
+}
+
+.navbar-header-button {
+  -webkit-border-radius: 3 !important;
+  -moz-border-radius: 3 !important;
+  border-radius: 3px !important;
+  font-family: Arial !important;
+  color: #ffffff !important;
+  font-size: 20px !important;
+  background: #F57421 !important;
+  padding: 20px 40px 20px 40px !important;
+  border: solid #F57421 1px !important;
+  text-decoration: none !important;
+  margin-top: 8px;
+}
+
+.navbar-header-button:hover {
+  background: #fa6000 !important;
+  text-decoration: none !important;
+}
+@media (max-width: 768px){
+.navbar-text { display: none; }
+}
+
+.navbar-text{
+    float: right ;
+    margin-right: 20px;
+	margin-top: 30px;
+	font-weight: lighter !important;
+	font-size: 16px;	
+	word-wrap: break-word;
+	margin-left: 20px;
+}
+
 
 .benchmark-form {
   background: white;

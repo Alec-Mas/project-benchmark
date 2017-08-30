@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+	
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -13,17 +13,22 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" type="text/css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://rawgit.com/lykmapipo/themify-icons/master/css/themify-icons.css">
-
+	<link rel = "icon" href="favicon.png" type="image/x-icon">
 </head>
 <body>
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
+		<button class="navbar-header-button" href="https://stratejos.ai/">Learn More</button>
+				
             <div class="navbar-header">
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="#">
                     <img src="{{ asset('img/foot-logo.png') }}">
                 </a>
             </div>
+			<div class="navbar-text">
+				Get an AI Project Management Assistant
+			</div>
         </div>
     </nav>
     <div id="wrap">
