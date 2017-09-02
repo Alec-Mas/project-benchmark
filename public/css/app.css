@@ -8455,9 +8455,7 @@ body {
   background: #fa6000 !important;
   text-decoration: none !important;
 }
-@media (max-width: 768px){
-.navbar-text { display: none; }
-}
+
 
 .navbar-footer-button {
   -webkit-border-radius: 3 !important;
@@ -8470,8 +8468,10 @@ body {
   padding: 10px 20px 10px 20px !important;
   border: solid #F57421 1px !important;
   text-decoration: none !important;
-  margin-top: 20px;
+  float: right !important;
+  font-weight: lighter !important;
   white-space: nowrap !important;
+  margin-left: 10px;
 }
 
 .navbar-footer-button:hover {
@@ -8491,7 +8491,7 @@ body {
 
 .navbar-footer-text{
     float: center;
-	margin-top: 30px;
+	margin-top: 2%;
 	margin-right: auto;
 	margin-left: auto;
 	font-weight: lighter !important;
@@ -8505,7 +8505,7 @@ body {
 }
 
 .SocialBar {
-	height: 30px;
+	height: 25px;
 	width: 100%;
 	text-align: center;
 	position : fixed;
@@ -8516,3 +8516,25 @@ body {
 	border-bottom:1px solid #d0d5d6;
 	line-height: 10px;
 }
+@media (max-width: 768px){
+.navbar-text { display: none; }
+.navbar-header-button {
+  font-size: 12px !important;
+  padding: 5px 10px 5px 10px !important;
+  margin-top: 30px;
+}
+.navbar-footer-button {
+  font-size: 12px !important;
+  padding: 5px 10px 5px 10px !important;
+  margin-left: 0px;
+}
+.navbar-footer-text{
+	margin-top: 4%;
+	font-size: 12px !important;	
+}
+#footer {
+  height: 30px;
+  padding: 0 0 90px;
+}
+}
+
