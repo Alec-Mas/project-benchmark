@@ -8526,7 +8526,7 @@ body {
 .navbar-footer-button {
   font-size: 12px !important;
   padding: 2px 4px 2px 4px !important;
-  margin-left: 0px;
+  margin-left: 5px;
 }
 .navbar-footer-text{
 	margin-top: 4%;
@@ -8535,6 +8535,9 @@ body {
 #footer {
   height: 30px;
   padding: 0 0 100px;
+}
+.SocialBar {
+	display: inline-block;
 }
 }
 
