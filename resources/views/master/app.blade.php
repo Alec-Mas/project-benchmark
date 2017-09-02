@@ -56,7 +56,7 @@
 	  </div>
     </div>
 	<div class="SocialBar">
-		<div class="fb-share-button" data-href="https://project-benchmark.herokuapp.com/" data-layout="button" data-size="small" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fproject-benchmark.herokuapp.com%2F&amp;src=sdkpreparse">Share</a></div>
+		<div class="fb-share-button" data-href="https://project-benchmark.herokuapp.com/" data-layout="button" data-size="small" data-mobile-iframe="flase"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fproject-benchmark.herokuapp.com%2F&amp;src=sdkpreparse">Share</a></div>
 		<a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 		<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
 		<script type="IN/Share" data-url="https://project-benchmark.herokuapp.com/"></script>

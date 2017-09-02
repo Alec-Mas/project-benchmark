@@ -8520,12 +8520,12 @@ body {
 .navbar-text { display: none; }
 .navbar-header-button {
   font-size: 12px !important;
-  padding: 5px 10px 5px 10px !important;
-  margin-top: 30px;
+  padding: 2px 4px 2px 4px !important;
+  margin-top: 35px;
 }
 .navbar-footer-button {
   font-size: 12px !important;
-  padding: 5px 10px 5px 10px !important;
+  padding: 2px 4px 2px 4px !important;
   margin-left: 0px;
 }
 .navbar-footer-text{
@@ -8534,7 +8534,7 @@ body {
 }
 #footer {
   height: 30px;
-  padding: 0 0 90px;
+  padding: 0 0 100px;
 }
 }
 
