@@ -52,7 +52,7 @@
             <table class="navbar-footer-text">
                 <tr>
                     <td>Keen to improve performance? Get an AI project management assistant!</td>
-                    <td><a class="navbar-footer-button" href="https://stratejos.ai/">Learn More</a></td>
+                    <td class="navbar-footer-button" href="https://stratejos.ai/">Learn More</td>
                 </tr>
             </table>
         </div>

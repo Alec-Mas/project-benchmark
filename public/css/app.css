@@ -8373,6 +8373,7 @@ body {
 #footer {
   height: 60px;
   background-color: #f5f5f5;
+  padding: 0 0 110px;
 }
 
 .row {
@@ -8516,17 +8517,6 @@ body {
   line-height: 10px;
 }
 
-.navbar-footer-button {
-  font-size: 12px !important;
-  padding: 2px 4px 2px 4px !important;
-  margin-left: 5px;
-}
-
-.navbar-footer-text {
-  margin-top: 4%;
-  font-size: 12px !important;
-}
-
 @media (max-width: 768px) {
   .navbar-text {
     display: none;
@@ -8537,10 +8527,21 @@ body {
     padding: 2px 4px 2px 4px !important;
     margin-top: 35px;
   }
-}
 
-#footer {
-  height: 30px;
-  padding: 0 0 100px;
+  .navbar-footer-button {
+    font-size: 12px !important;
+    padding: 2px 4px 2px 4px !important;
+    margin-left: 5px;
+  }
+
+  .navbar-footer-text {
+    margin-top: 4%;
+    font-size: 12px !important;
+  }
+
+  #footer {
+    height: 30px;
+    padding: 0 0 100px;
+  }
 }
 
