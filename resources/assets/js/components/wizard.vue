@@ -169,7 +169,7 @@ export default {
         methods: {
             onComplete: function() {
 
-                $.ajax({
+                /*$.ajax({
                     method: 'POST', // Type of response and matches what we said in the route
                     url: 'generate-report', // This is the url we gave in the route
                     data: {
@@ -185,7 +185,7 @@ export default {
                         console.log(JSON.stringify(jqXHR));
                         console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
                     }
-                });
+                });*/
 
                 this.$router.push({name: 'Benchmark'});
 

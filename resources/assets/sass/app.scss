@@ -31,6 +31,10 @@ body {
   background-color: #f5f5f5;
 }
 
+.navbar-header-button {
+
+}
+
 .row {
     margin-left: 0;
     margin-right: 0;
@@ -99,4 +103,94 @@ body {
     max-width: 950px;
     margin-right: auto;
     margin-left: auto;
+}
+
+.navbar-header-button {
+  -webkit-border-radius: 3 !important;
+  -moz-border-radius: 3 !important;
+  border-radius: 3px !important;
+  font-family: Arial !important;
+  color: #ffffff !important;
+  font-size: 16px !important;
+  background: #F57421 !important;
+  padding: 10px 20px 10px 20px !important;
+  border: solid #F57421 1px !important;
+  text-decoration: none !important;
+  margin-top: 20px;
+  float: right !important;
+  font-weight: lighter !important;
+}
+
+.navbar-header-button:hover {
+  background: #fa6000 !important;
+  text-decoration: none !important;
+}
+
+.navbar-footer-button {
+  -webkit-border-radius: 3 !important;
+  -moz-border-radius: 3 !important;
+  border-radius: 3px !important;
+  font-family: Arial !important;
+  color: #ffffff !important;
+  font-size: 16px !important;
+  background: #F57421 !important;
+  padding: 10px 20px 10px 20px !important;
+  border: solid #F57421 1px !important;
+  text-decoration: none !important;
+  float: right !important;
+  font-weight: lighter !important;
+  white-space: nowrap !important;
+  margin-left: 10px;
+}
+
+.navbar-footer-button:hover {
+  background: #fa6000 !important;
+  text-decoration: none !important;
+}
+
+.navbar-text{
+    float: right;
+    margin-right: 20px;
+    margin-top: 30px;
+    font-weight: lighter !important;
+    font-size: 16px;
+    word-wrap: break-word;
+    margin-left: 20px;
+}
+
+.navbar-footer-text{
+    float: center;
+    margin-top: 2%;
+    margin-right: auto;
+    margin-left: auto;
+    font-weight: lighter !important;
+    font-size: 16px;
+    word-wrap: break-word;
+}
+
+.social-bar {
+    height: 25px;
+    width: 100%;
+    text-align: center;
+    position : fixed;
+    bottom: 0%;
+    left: 0%;
+    background: #f5f5f5 !important;
+    border-top:1px solid #d0d5d6 ;
+    border-bottom:1px solid #d0d5d6 ;
+    line-height: 10px;
+}
+
+.navbar-footer-button {
+  font-size: 12px !important;
+  padding: 2px 4px 2px 4px !important;
+  margin-left: 5px;
+}
+.navbar-footer-text{
+    margin-top: 4%;
+    font-size: 12px !important;
+}
+#footer {
+  height: 30px;
+  padding: 0 0 100px;
 }
