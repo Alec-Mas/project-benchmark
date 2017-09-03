@@ -8,6 +8,12 @@ use App\Project;
 
 class ProjectController extends Controller
 {
+    public function Get()
+    {
+        $projects = Project::all();
+        return response()->json($projects);
+    }
+
     public function AddProject(Request $request)
     {
         // Extract the form data

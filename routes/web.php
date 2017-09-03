@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::post('generate-report', 'ProjectController@AddProject');
+
+Route::get('benchmark-report', 'ProjectController@Get');

@@ -5678,11 +5678,8 @@ tbody.collapse.in {
   }
 
   .navbar-right {
-    float: right ;
-    margin-right: 20px;
-	margin-top: 30px;
-	font-weight: lighter !important;
-	font-size: 16px;	
+    float: right !important;
+    margin-right: -15px;
   }
 
   .navbar-right ~ .navbar-right {
@@ -8366,17 +8363,16 @@ body {
   min-height: 100%;
   height: auto;
   /* Negative indent footer by its height */
-  margin: 0 auto -70px;
+  margin: 0 auto -60px;
   /* Pad bottom by footer height */
-  padding: 0 0 70px;
+  padding: 0 0 60px;
 }
 
 /* Set the fixed height of the footer here */
 
 #footer {
-  height: 70px;
+  height: 60px;
   background-color: #f5f5f5;
-  padding: 0 0 130px;
 }
 
 .row {
@@ -8399,7 +8395,6 @@ body {
   margin-right: auto;
   margin-left: auto;
   text-align: center;
-  float: center;
 }
 
 /* Landing Page Title */
@@ -8435,109 +8430,17 @@ body {
   border-color: #F57421 !important;
 }
 
-.navbar-header-button {
-  -webkit-border-radius: 3 !important;
-  -moz-border-radius: 3 !important;
-  border-radius: 3px !important;
-  font-family: Arial !important;
-  color: #ffffff !important;
-  font-size: 16px !important;
-  background: #F57421 !important;
-  padding: 10px 20px 10px 20px !important;
-  border: solid #F57421 1px !important;
-  text-decoration: none !important;
-  margin-top: 20px;
-  float: right !important;
-  font-weight: lighter !important;
-}
-
-.navbar-header-button:hover {
-  background: #fa6000 !important;
-  text-decoration: none !important;
-}
-
-
-.navbar-footer-button {
-  -webkit-border-radius: 3 !important;
-  -moz-border-radius: 3 !important;
-  border-radius: 3px !important;
-  font-family: Arial !important;
-  color: #ffffff !important;
-  font-size: 16px !important;
-  background: #F57421 !important;
-  padding: 10px 20px 10px 20px !important;
-  border: solid #F57421 1px !important;
-  text-decoration: none !important;
-  float: right !important;
-  font-weight: lighter !important;
-  white-space: nowrap !important;
-  margin-left: 10px;
-}
-
-.navbar-footer-button:hover {
-  background: #fa6000 !important;
-  text-decoration: none !important;
-}
-
-.navbar-text{
-    float: right;
-    margin-right: 20px;
-	margin-top: 30px;
-	font-weight: lighter !important;
-	font-size: 16px;	
-	word-wrap: break-word;
-	margin-left: 20px;
-}
-
-.navbar-footer-text{
-    float: center;
-	margin-top: 2%;
-	margin-right: auto;
-	margin-left: auto;
-	font-weight: lighter !important;
-	font-size: 16px;	
-	word-wrap: break-word;
-}
-
 .benchmark-form {
   background: white;
   max-width: 650px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
-.SocialBar {
-	height: 25px;
-	width: 100%;
-	text-align: center;
-	position : fixed;
-	bottom: 0%;
-	left: 0%;
-	background: #f5f5f5 !important;	
-	border-top:1px solid #d0d5d6;
-	border-bottom:1px solid #d0d5d6;
-	line-height: 10px;
-}
-@media (max-width: 768px){
-.navbar-text { display: none; }
-.navbar-header-button {
-  font-size: 12px !important;
-  padding: 2px 4px 2px 4px !important;
-  margin-top: 35px;
-}
-.navbar-footer-button {
-  font-size: 12px !important;
-  padding: 2px 4px 2px 4px !important;
-  margin-left: 5px;
-}
-.navbar-footer-text{
-	margin-top: 4%;
-	font-size: 12px !important;	
-}
-#footer {
-  height: 30px;
-  padding: 0 0 100px;
-}
-.SocialBar {
-	display: inline-block;
-}
+.benchmark-report {
+  background: white;
+  max-width: 950px;
+  margin-right: auto;
+  margin-left: auto;
 }
 

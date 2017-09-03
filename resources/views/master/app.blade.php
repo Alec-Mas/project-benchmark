@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	
+
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -26,17 +26,12 @@
 }(document, 'script', 'facebook-jssdk'));</script>
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container">
-		<a class="navbar-header-button" href="https://stratejos.ai/">Learn More</a>
-				
             <div class="navbar-header">
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="#">
                     <img src="{{ asset('img/foot-logo.png') }}">
                 </a>
             </div>
-			<div class="navbar-text">
-				Get an AI Project Management Assistant
-			</div>
         </div>
     </nav>
     <div id="wrap">
@@ -48,19 +43,10 @@
     <div id="footer">
       <div class="container">
 		<div class="center-block">
-		<table class="navbar-footer-text">
-		<tr>
-		<td>Keen to improve performance? Get an AI project management assistant!</td>
-		  <td><a class="navbar-footer-button" href="https://stratejos.ai/">Learn More</a></p></td></tr></table>
+            <p>Keen to improve performance? Get an AI project management assistant!</p>
 		</div>
 	  </div>
     </div>
-	<div class="SocialBar">
-		<div class="fb-share-button" data-href="https://project-benchmark.herokuapp.com/" data-layout="button" data-size="small" data-mobile-iframe="flase"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fproject-benchmark.herokuapp.com%2F&amp;src=sdkpreparse">Share</a></div>
-		<a href="https://twitter.com/share" class="twitter-share-button" data-show-count="false">Tweet</a><script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-		<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
-		<script type="IN/Share" data-url="https://project-benchmark.herokuapp.com/"></script>
-	</div>
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/all.js') }}" type="text/javascript"></script>
