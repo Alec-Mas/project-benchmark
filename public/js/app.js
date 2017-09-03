@@ -84728,7 +84728,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   }, [_c('tab-content', {
     attrs: {
       "title": "Project Scope",
-      "icon": "ti-search"
+      "icon": "ti-search",
+      "before-change": _vm.validateFirstStep
     }
   }, [_c('el-form', {
     ref: "scopeForm",
@@ -84844,7 +84845,8 @@ module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c
   })], 1)])], 1)], 1), _vm._v(" "), _c('tab-content', {
     attrs: {
       "title": "Project Budget",
-      "icon": "ti-money"
+      "icon": "ti-money",
+      "before-change": _vm.validateSecondStep
     }
   }, [_c('el-form', {
     ref: "budgetForm",
