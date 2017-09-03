@@ -186,10 +186,21 @@ body {
   padding: 2px 4px 2px 4px !important;
   margin-left: 5px;
 }
+
 .navbar-footer-text{
     margin-top: 4%;
     font-size: 12px !important;
 }
+
+@media (max-width: $breakpoint-tablet) {
+    .navbar-text { display: none; }
+    .navbar-header-button {
+        font-size: 12px !important;
+        padding: 2px 4px 2px 4px !important;
+        margin-top: 35px;
+    }
+}
+
 #footer {
   height: 30px;
   padding: 0 0 100px;
