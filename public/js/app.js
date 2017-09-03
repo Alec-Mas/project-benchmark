@@ -84753,8 +84753,18 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
                     console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
                 }
             });*/
-
-            this.$router.push({ name: 'Benchmark' });
+            var vm = this;
+            axios.post('generate-report', {
+                _token: $('meta[name="csrf-token"]').attr('content'),
+                s: this.scope,
+                b: this.budget,
+                f: this.finalise
+            }).then(function (response) {
+                console.log(response);
+                vm.$router.push({ name: 'Benchmark' });
+            }).catch(function (error) {
+                console.log(error);
+            });
         },
         validateFirstStep: function validateFirstStep() {
             var _this = this;
