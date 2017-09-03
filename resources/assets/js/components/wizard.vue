@@ -186,9 +186,20 @@ export default {
                         console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
                     }
                 });*/
-
-                this.$router.push({name: 'Benchmark'});
-
+                var vm = this;
+                axios.post('generate-report', {
+                    _token: $('meta[name="csrf-token"]').attr('content'),
+                    s: this.scope,
+                    b: this.budget,
+                    f: this.finalise,
+                })
+                .then(function (response) {
+                    console.log(response);
+                    vm.$router.push({name: 'Benchmark'});
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
             },
             validateFirstStep() {
                 return new Promise((resolve, reject) => {
