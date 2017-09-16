@@ -97,10 +97,10 @@ body {
     max-width: 650px;
     margin-right: auto;
     margin-left: auto;
+    border-radius: 4px;
 }
 
 .benchmark-report {
-    background : white;
     max-width: 950px;
     margin-right: auto;
     margin-left: auto;
@@ -196,11 +196,10 @@ body {
 }
 .navbar-footer-text{
     margin-top: 4%;
-    font-size: 12px !important;    
+    font-size: 12px !important;
 }
 #footer {
  height: 30px;
  padding: 0 0 100px;
 }
 }
-

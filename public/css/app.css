@@ -8436,10 +8436,10 @@ body {
   max-width: 650px;
   margin-right: auto;
   margin-left: auto;
+  border-radius: 4px;
 }
 
 .benchmark-report {
-  background: white;
   max-width: 950px;
   margin-right: auto;
   margin-left: auto;

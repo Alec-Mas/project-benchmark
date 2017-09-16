@@ -18,7 +18,7 @@
             </thead>
 
             <tbody>
-                <tr v-for="project in projects">
+                <!--<tr v-for="project in projects">
                     <td>{{ project.id }}</td>
                     <td>{{ project.project_name }}</td>
                     <td>{{ project.project_industry }}</td>
@@ -28,7 +28,7 @@
                     <td>{{ project.project_actual_end }}</td>
                     <td>{{ project.project_budget }}</td>
                     <td>{{ project.project_actual_budget }}</td>
-                </tr>
+                </tr>-->
             </tbody>
         </table>
     </div>
@@ -37,9 +37,10 @@
 <script>
 
     export default {
-        data(){
-            return{
-                projects: []
+
+        watch: {
+            '$route' (to, from) {
+                this.fetchItems();
             }
         },
 
@@ -51,12 +52,30 @@
         methods: {
             fetchItems()
             {
-              let uri = 'benchmark-report';
-              this.axios.get(uri).then((response) => {
-                  this.projects = response.data;
+                axios.get('generate/'+this.$route.params.code)
+                .then((response) => {
+                    console.log(response.data);
+                });
+              /*axios.get(uri , {
+                  _token: $('meta[name="csrf-token"]').attr('content'),
+                  c: this.$route.params.code,
+              })
+              .then((response) => {
                   console.log(response.data);
+              });*/
 
-              });
+              /*axios.post('generate', {
+                  _token: $('meta[name="csrf-token"]').attr('content'),
+                  code: this.$route.params.code,
+              })
+              .then(function (response) {
+                console.log(response);
+              })
+              .catch(function (error) {
+                console.log(error);
+            });*/
+                console.log(this.$route.params.code);
+                console.log($('meta[name="csrf-token"]').attr('content'));
             }
         }
     }

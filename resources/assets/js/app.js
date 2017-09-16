@@ -36,17 +36,18 @@ components: {
 import App from './App.vue';
 import Wizard from './components/Wizard.vue';
 import Benchmark from './components/Benchmark.vue';
-
+import Link from './components/Link.vue';
 
 const routes = [
   {  path: '/', component: Wizard },
-  { name: 'Benchmark', path: '/benchmark-report', component: Benchmark }
+  /*{ name: 'Benchmark', path: '/benchmark-report', component: Benchmark },*/
+  { name: 'Link', path: '/get-link/:code', component: Link, props: true }
 ];
 
 const router = new VueRouter({ mode: 'history', routes: routes });
 
 new Vue ({
   el: '#app',
-  render: h => h(App),
-  router: router
+  router,
+  render: h => h(App)
 });

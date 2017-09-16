@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Project;
+use App\Link;
 
 class ProjectController extends Controller
 {
@@ -53,5 +54,54 @@ class ProjectController extends Controller
             'project_budget' => (int)$project_budget,
             'project_actual_budget' => (int)$project_actual_budget,
         ]);
+    }
+
+    public function CreateLink(Request $request) {
+
+        $email = $request['f']['email'];
+        $code = null;
+
+        $multiplier = 1000000;
+
+        $exists = Link::where('email', '=', $email);
+
+        if($exists->count() === 1) {
+            $code = $exists->first()->$code;
+        } else {
+            $created = Link::create(array(
+                'email' => $email
+            ));
+
+            if($created) {
+                $code = base_convert($created->id+$multiplier, 10, 36);
+                Link::where('id', '=', $created->id)->update(array(
+                    'code' => $code
+                ));
+            }
+        }
+        if($code) {
+            //return view('welcome')
+            //->with('global', 'Your unique URL: <a href="'. action('get', $code) .'">' . action('get', $code) . '</a>');3
+            //return view('report');
+            return response()->json($code);
+        }
+
+        //return view('welcome')
+            //->with('global', 'Whoops, something went wrong');
+    }
+
+    public function GetReport($code) {
+        $root = $_SERVER['SERVER_NAME'];
+        $link = Link::where('code', '=', $code);
+
+        if($link->count() === 1) {
+            //return redirect($link->first()->url);
+            //echo $link;
+            return view('benchmark', ['link' => $link->first()->email], ['root' => $root]);
+        }
+        //return response()->json($code);
+
+        //return view('welcome')
+        //->with('email', $link);
     }
 }

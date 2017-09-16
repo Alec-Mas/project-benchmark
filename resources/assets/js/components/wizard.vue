@@ -1,66 +1,71 @@
 
 
 <template>
-<div class="benchmark-form">
-    <form-wizard title="" subtitle="" @on-complete="onComplete" shape="circle" color="#F57421" error-color="#ff0000">
-        <tab-content title="Project Scope" icon="ti-search" :before-change="validateFirstStep">
-        <!--<tab-content title="Project Scope" icon="ti-search">-->
-            <el-form :inline="false" :model="scope" class="demo-form-inline" :rules="rules" ref="scopeForm">
-                <el-form-item prop="name">
-                    <el-input v-model="scope.name" placeholder="What's the name of your project?"></el-input>
-                </el-form-item>
-                <el-form-item prop="industry">
-                    <el-input v-model="scope.industry" placeholder="Project Industry"></el-input>
-                </el-form-item>
-                <el-form-item prop="size">
-                    <el-input v-model.number="scope.size" type="number" placeholder="Team Size"></el-input>
-                </el-form-item>
-                <el-form-item prop="startdate">
-                    <div class="block">
-                        <el-date-picker v-model="scope.startdate" format="yy-MM-dd" type="date" placeholder="Project Start Date">
-                        </el-date-picker>
-                    </div>
-                </el-form-item>
-                <el-form-item prop="enddate">
-                    <div class="block">
-                        <el-date-picker v-model="scope.enddate" format="yy-MM-dd" type="date" placeholder="Estimated End Date">
-                        </el-date-picker>
-                    </div>
-                </el-form-item>
-                <el-form-item prop="actualdate">
-                    <div class="block">
-                        <el-date-picker v-model="scope.actualdate" format="yy-MM-dd" type="date" placeholder="Actual End Date">
-                        </el-date-picker>
-                    </div>
-                </el-form-item>
-            </el-form>
 
-        </tab-content>
-        <tab-content title="Project Budget" icon="ti-money" :before-change="validateSecondStep">
-        <!--<tab-content title="Project Budget" icon="ti-money">-->
-            <el-form :inline="false" :model="budget" class="demo-form-inline" :rules="rules" ref="budgetForm">
-                <el-form-item prop="start">
-                    <el-input v-model.number="budget.start" type="number" placeholder="How much was your budget?"></el-input>
-                </el-form-item>
-                <el-form-item prop="actual">
-                    <el-input v-model.number="budget.actual" type="number" placeholder="What's did you actually spend?"></el-input>
-                </el-form-item>
-            </el-form>
-        </tab-content>
-        <tab-content title="Finalisation" icon="ti-email" :before-change="validateThirdStep">
-            <el-form :inline="false" :model="finalise" class="demo-form-inline" :rules="rules" ref="emailForm">
-                <el-form-item prop="email">
-                    <el-input v-model="finalise.email" placeholder="What's your email address?"></el-input>
-                </el-form-item>
-            </el-form>
+<div class="row">
+    <div class="page-title">Benchmark your project</div>
+    <div class="page-subtitle">Take 2 minutes to see how you compare</div>
+    <div class="benchmark-form">
+        <form-wizard title="" subtitle="" @on-complete="onComplete" shape="circle" color="#F57421" error-color="#ff0000">
+            <tab-content title="Project Scope" icon="ti-search" :before-change="validateFirstStep">
+            <!--<tab-content title="Project Scope" icon="ti-search">-->
+                <el-form :inline="false" :model="scope" class="demo-form-inline" :rules="rules" ref="scopeForm">
+                    <el-form-item prop="name">
+                        <el-input v-model="scope.name" placeholder="What's the name of your project?"></el-input>
+                    </el-form-item>
+                    <el-form-item prop="industry">
+                        <el-input v-model="scope.industry" placeholder="Project Industry"></el-input>
+                    </el-form-item>
+                    <el-form-item prop="size">
+                        <el-input v-model.number="scope.size" type="number" placeholder="Team Size"></el-input>
+                    </el-form-item>
+                    <el-form-item prop="startdate">
+                        <div class="block">
+                            <el-date-picker v-model="scope.startdate" format="yy-MM-dd" type="date" placeholder="Project Start Date">
+                            </el-date-picker>
+                        </div>
+                    </el-form-item>
+                    <el-form-item prop="enddate">
+                        <div class="block">
+                            <el-date-picker v-model="scope.enddate" format="yy-MM-dd" type="date" placeholder="Estimated End Date">
+                            </el-date-picker>
+                        </div>
+                    </el-form-item>
+                    <el-form-item prop="actualdate">
+                        <div class="block">
+                            <el-date-picker v-model="scope.actualdate" format="yy-MM-dd" type="date" placeholder="Actual End Date">
+                            </el-date-picker>
+                        </div>
+                    </el-form-item>
+                </el-form>
 
-        </tab-content>
+            </tab-content>
+            <tab-content title="Project Budget" icon="ti-money" :before-change="validateSecondStep">
+            <!--<tab-content title="Project Budget" icon="ti-money">-->
+                <el-form :inline="false" :model="budget" class="demo-form-inline" :rules="rules" ref="budgetForm">
+                    <el-form-item prop="start">
+                        <el-input v-model.number="budget.start" type="number" placeholder="How much was your budget?"></el-input>
+                    </el-form-item>
+                    <el-form-item prop="actual">
+                        <el-input v-model.number="budget.actual" type="number" placeholder="What's did you actually spend?"></el-input>
+                    </el-form-item>
+                </el-form>
+            </tab-content>
+            <tab-content title="Finalisation" icon="ti-email" :before-change="validateThirdStep">
+                <el-form :inline="false" :model="finalise" class="demo-form-inline" :rules="rules" ref="emailForm">
+                    <el-form-item prop="email">
+                        <el-input v-model="finalise.email" placeholder="What's your email address?"></el-input>
+                    </el-form-item>
+                </el-form>
 
-        <el-button type="primary" class="previous-button" slot="prev">Back</el-button>
-        <el-button type="primary" class="forward-button" slot="next">Next</el-button>
-        <el-button type="success" slot="finish">Finish</el-button>
+            </tab-content>
 
-    </form-wizard>
+            <el-button type="primary" class="previous-button" slot="prev">Back</el-button>
+            <el-button type="primary" class="forward-button" slot="next">Next</el-button>
+            <el-button type="success" slot="finish">Finish</el-button>
+
+        </form-wizard>
+    </div>
 </div>
 
 </template>
@@ -187,19 +192,34 @@ export default {
                     }
                 });*/
                 var vm = this;
+                // Create the Project
                 axios.post('generate-report', {
                     _token: $('meta[name="csrf-token"]').attr('content'),
                     s: this.scope,
                     b: this.budget,
-                    f: this.finalise,
                 })
                 .then(function (response) {
                     console.log(response);
-                    vm.$router.push({name: 'Benchmark'});
                 })
                 .catch(function (error) {
                     console.log(error);
                 });
+
+                // Create the Email Link
+                axios.post('generate-link', {
+                    _token: $('meta[name="csrf-token"]').attr('content'),
+                    f: this.finalise,
+                })
+                .then(function (response) {
+                    console.log(response);
+                    vm.$router.push({name: 'Link', params: { code: response.data }});
+                    //vm.$router.push({ path: `/get-link/${response.data}` });
+
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+
             },
             validateFirstStep() {
                 return new Promise((resolve, reject) => {

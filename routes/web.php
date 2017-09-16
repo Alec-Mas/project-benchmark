@@ -17,4 +17,12 @@ Route::get('/', function () {
 
 Route::post('generate-report', 'ProjectController@AddProject');
 
-Route::get('benchmark-report', 'ProjectController@Get');
+Route::post('generate-link', 'ProjectController@CreateLink');
+
+//Route::get('benchmark-report', 'ProjectController@Get');
+
+Route::get('{code}', 'ProjectController@GetReport');
+
+Route::get('/{vue_capture?}', function () {
+  return view('welcome');
+})->where('vue_capture', '[\/\w\.-]*');
