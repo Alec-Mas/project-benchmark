@@ -5,12 +5,9 @@ APP_DEBUG=true
 APP_LOG_LEVEL=debug
 APP_URL=http://localhost/project-benchmark/public/
 
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=project-benchmark
-DB_USERNAME=root
-DB_PASSWORD=m4511j1991
+DB_CONNECTION=sqlite
+DB_DATABASE=databse/database.sqlite
+
 
 BROADCAST_DRIVER=log
 CACHE_DRIVER=file

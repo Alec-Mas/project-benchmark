@@ -14,7 +14,14 @@
                         <el-input v-model="scope.name" placeholder="What's the name of your project?"></el-input>
                     </el-form-item>
                     <el-form-item prop="industry">
-                        <el-input v-model="scope.industry" placeholder="Project Industry"></el-input>
+					<el-select v-model="scope.industry" placeholder="Project Industry">
+						<el-option
+							v-for="item in options"
+							:key="item.value"
+							:label="item.label"
+							:value="item.value">
+						</el-option>
+					</el-select>
                     </el-form-item>
                     <el-form-item prop="size">
                         <el-input v-model.number="scope.size" type="number" placeholder="Team Size"></el-input>
@@ -91,6 +98,77 @@ export default {
                 }, 1000);
             }
             return {
+				options: [{
+					  value: 'Agriculture and Mining',
+					  label: 'Agriculture and Mining'
+					}, {
+					  value: 'Business Services',
+					  label: 'Business Services'
+					}, {
+					  value: 'Computer and Electronics',
+					  label: 'Computer and Electronics'
+					}, {
+					  value: 'Consumer Services',
+					  label: 'Consumer Services'
+					}, {
+					  value: 'Education',
+					  label: 'Education'
+					}, {
+					  value: 'Energy and Utilities',
+					  label: 'Energy and Utilities'
+					}, {
+					  value: 'Financial Services',
+					  label: 'Financial Services'
+					}, {
+					  value: 'Business Services',
+					  label: 'Business Services'
+					}, {
+					  value: 'Government',
+					  label: 'Government'
+					}, {
+					  value: 'Health, Pharmaceuticals, and Biotech',
+					  label: 'Health, Pharmaceuticals, and Biotech'
+					}, {
+					  value: 'Business Services',
+					  label: 'Business Services'
+					}, {
+					  value: 'Manufacturing',
+					  label: 'Manufacturing'
+					}, {
+					  value: 'Media and Entertainment',
+					  label: 'Media and Entertainment'
+					}, {
+					  value: 'Non-profit',
+					  label: 'Non-profit'
+					}, {
+					  value: 'Real Estate and Construction',
+					  label: 'Real Estate and Construction'
+					}, {
+					  value: 'Consumer Services',
+					  label: 'Consumer Services'
+					}, {
+					  value: 'Retail',
+					  label: 'Retail'
+					}, {
+					  value: 'Software and Internet',
+					  label: 'Software and Internet'
+					}, {
+					  value: 'Telecommunications',
+					  label: 'Telecommunications'
+					}, {
+					  value: 'Transportation and Storage',
+					  label: 'Transportation and Storage'
+					}, {
+					  value: 'Travel Recreation and Leisure',
+					  label: 'Travel Recreation and Leisure'
+					}, {
+					  value: 'Wholesale and Distribution',
+					  label: 'Wholesale and Distribution'
+					}, {
+						value: 'Other',
+						label: 'Other'
+					}],
+				value: '',
                 scope: {
                     name: '',
                     industry: '',
@@ -120,7 +198,7 @@ export default {
                     industry: [{
                         required: true,
                         message: 'Please enter an Industry.',
-                        trigger: 'blur'
+						trigger: 'change' 
                     }],
                     size: [{
                         type: "number",
@@ -184,8 +262,8 @@ export default {
                         f: this.finalise,
                     }, // a JSON object to send back
                     success: function(response){ // What to do if we succeed
-
-                    },
+                    
+					},
                     error: function(jqXHR, textStatus, errorThrown) { // What to do if we fail
                         console.log(JSON.stringify(jqXHR));
                         console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
