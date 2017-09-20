@@ -198,7 +198,7 @@ export default {
                     industry: [{
                         required: true,
                         message: 'Please enter an Industry.',
-						trigger: 'change' 
+						trigger: 'change'
                     }],
                     size: [{
                         type: "number",
@@ -262,7 +262,7 @@ export default {
                         f: this.finalise,
                     }, // a JSON object to send back
                     success: function(response){ // What to do if we succeed
-                    
+
 					},
                     error: function(jqXHR, textStatus, errorThrown) { // What to do if we fail
                         console.log(JSON.stringify(jqXHR));
@@ -271,6 +271,7 @@ export default {
                 });*/
                 var vm = this;
                 // Create the Project
+
                 axios.post('generate-report', {
                     _token: $('meta[name="csrf-token"]').attr('content'),
                     s: this.scope,

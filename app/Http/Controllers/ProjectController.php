@@ -15,11 +15,21 @@ class ProjectController extends Controller
         return response()->json($projects);
     }
 
+    function debug_to_console( $data ) {
+        $output = $data;
+        if ( is_array( $output ) )
+            $output = implode( ',', $output);
+
+        echo "<script>console.log( 'Debug Objects: " . $output . "' );</script>";
+    }
+
     public function AddProject(Request $request)
     {
+
         // Extract the form data
         //print_r($request);
         // First tab
+
         $project_name = $request['s']['name'];
         $project_industry = $request['s']['industry'];
         $project_size = $request['s']['size'];
@@ -66,8 +76,10 @@ class ProjectController extends Controller
         $exists = Link::where('email', '=', $email);
 
         if($exists->count() === 1) {
-            $code = $exists->first()->$code;
-        } else {
+            $code = $exists->first()->code;
+        }
+        else
+        {
             $created = Link::create(array(
                 'email' => $email
             ));
