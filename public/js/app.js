@@ -14560,7 +14560,7 @@ components: {
 
 var routes = [{ path: '/', component: __WEBPACK_IMPORTED_MODULE_9__components_Wizard_vue___default.a },
 /*{ name: 'Benchmark', path: '/benchmark-report', component: Benchmark },*/
-{ name: 'Link', path: '/get-link/:code', component: __WEBPACK_IMPORTED_MODULE_11__components_Link_vue___default.a }];
+{ name: 'Link', path: '/get-link/:code_id', component: __WEBPACK_IMPORTED_MODULE_11__components_Link_vue___default.a }];
 
 var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({ mode: 'history', routes: routes });
 
@@ -84744,43 +84744,27 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     methods: {
         onComplete: function onComplete() {
 
-            /*$.ajax({
-                method: 'POST', // Type of response and matches what we said in the route
-                url: 'generate-report', // This is the url we gave in the route
-                data: {
-                    _token: $('meta[name="csrf-token"]').attr('content'),
-                    s: this.scope,
-                    b: this.budget,
-                    f: this.finalise,
-                }, // a JSON object to send back
-                success: function(response){ // What to do if we succeed
-            },
-                error: function(jqXHR, textStatus, errorThrown) { // What to do if we fail
-                    console.log(JSON.stringify(jqXHR));
-                    console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
-                }
-            });*/
             var vm = this;
-            // Create the Project
-
-            axios.post('generate-report', {
-                _token: $('meta[name="csrf-token"]').attr('content'),
-                s: this.scope,
-                b: this.budget
-            }).then(function (response) {
-                console.log(response);
-            }).catch(function (error) {
-                console.log(error);
-            });
-
             // Create the Email Link
             axios.post('generate-link', {
                 _token: $('meta[name="csrf-token"]').attr('content'),
                 f: this.finalise
             }).then(function (response) {
                 console.log(response);
-                vm.$router.push({ name: 'Link', params: { code: response.data } });
                 //vm.$router.push({ path: `/get-link/${response.data}` });
+            }).catch(function (error) {
+                console.log(error);
+            });
+
+            // Create the Project
+            axios.post('generate-report', {
+                _token: $('meta[name="csrf-token"]').attr('content'),
+                s: this.scope,
+                b: this.budget,
+                f: this.finalise
+            }).then(function (response) {
+                console.log(response);
+                vm.$router.push({ name: 'Link', params: { code_id: response.data } });
             }).catch(function (error) {
                 console.log(error);
             });

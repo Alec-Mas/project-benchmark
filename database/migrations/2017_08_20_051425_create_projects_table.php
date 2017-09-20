@@ -23,6 +23,7 @@ class CreateProjectsTable extends Migration
             $table->date('project_actual_end');
             $table->integer('project_budget');
             $table->integer('project_actual_budget');
+            $table->string('code_id');
             $table->timestamps();
         });
     }

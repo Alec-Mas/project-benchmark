@@ -27,9 +27,7 @@ class ProjectController extends Controller
     {
 
         // Extract the form data
-        //print_r($request);
         // First tab
-
         $project_name = $request['s']['name'];
         $project_industry = $request['s']['industry'];
         $project_size = $request['s']['size'];
@@ -53,6 +51,16 @@ class ProjectController extends Controller
         // Final tab
         $email = $request['f']['email'];
 
+        $code_id = null;
+        $link = null;
+
+        $exists = Link::where('email', '=', $email);
+
+        if($exists->count() === 1) {
+            $code_id = $exists->first()->id;
+            $link = $exists->first()->code_id;
+        }
+
         // Create the object
         Project::create([
             'project_name' => $project_name,
@@ -63,20 +71,23 @@ class ProjectController extends Controller
             'project_actual_end' => $project_actual_end,
             'project_budget' => (int)$project_budget,
             'project_actual_budget' => (int)$project_actual_budget,
+            'code_id' => $code_id,
         ]);
+
+        return response()->json($link);
     }
 
     public function CreateLink(Request $request) {
 
         $email = $request['f']['email'];
-        $code = null;
+        $code_id = null;
 
         $multiplier = 1000000;
 
         $exists = Link::where('email', '=', $email);
 
         if($exists->count() === 1) {
-            $code = $exists->first()->code;
+            $code_id = $exists->first()->code_id;
         }
         else
         {
@@ -85,33 +96,37 @@ class ProjectController extends Controller
             ));
 
             if($created) {
-                $code = base_convert($created->id+$multiplier, 10, 36);
+                $code_id = base_convert($created->id+$multiplier, 10, 36);
                 Link::where('id', '=', $created->id)->update(array(
-                    'code' => $code
+                    'code_id' => $code_id
                 ));
             }
         }
-        if($code) {
-            //return view('welcome')
-            //->with('global', 'Your unique URL: <a href="'. action('get', $code) .'">' . action('get', $code) . '</a>');3
-            //return view('report');
-            return response()->json($code);
+        if($code_id) {
+            return response()->json($code_id);
         }
 
         //return view('welcome')
             //->with('global', 'Whoops, something went wrong');
     }
 
-    public function GetReport($code) {
+    public function GetReport($code_id) {
         $root = $_SERVER['SERVER_NAME'];
-        $link = Link::where('code', '=', $code);
+        $link = Link::where('code_id', '=', $code_id);
+
+        $projects = Link::find($link->first()->id)->projects;
+        //echo $projects;
 
         if($link->count() === 1) {
             //return redirect($link->first()->url);
             //echo $link;
-            return view('benchmark', ['link' => $link->first()->email], ['root' => $root]);
+            //return view('benchmark', ['link' => $link->first()->email], ['root' => $root], ['projects' => $projects]);
+            return view('benchmark')
+                ->with(['link' => $link->first()->email])
+                ->with(['root' => $root])
+                ->with(['projects' => $projects]);
         }
-        //return response()->json($code);
+        //return response()->json($code_id);
 
         //return view('welcome')
         //->with('email', $link);

@@ -41,7 +41,7 @@ import Link from './components/Link.vue';
 const routes = [
   {  path: '/', component: Wizard },
   /*{ name: 'Benchmark', path: '/benchmark-report', component: Benchmark },*/
-  { name: 'Link', path: '/get-link/:code', component: Link }
+  { name: 'Link', path: '/get-link/:code_id', component: Link }
 ];
 
 const router = new VueRouter({ mode: 'history', routes: routes });

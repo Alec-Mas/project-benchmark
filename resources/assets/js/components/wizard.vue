@@ -252,38 +252,7 @@ export default {
         methods: {
             onComplete: function() {
 
-                /*$.ajax({
-                    method: 'POST', // Type of response and matches what we said in the route
-                    url: 'generate-report', // This is the url we gave in the route
-                    data: {
-                        _token: $('meta[name="csrf-token"]').attr('content'),
-                        s: this.scope,
-                        b: this.budget,
-                        f: this.finalise,
-                    }, // a JSON object to send back
-                    success: function(response){ // What to do if we succeed
-
-					},
-                    error: function(jqXHR, textStatus, errorThrown) { // What to do if we fail
-                        console.log(JSON.stringify(jqXHR));
-                        console.log("AJAX error: " + textStatus + ' : ' + errorThrown);
-                    }
-                });*/
                 var vm = this;
-                // Create the Project
-
-                axios.post('generate-report', {
-                    _token: $('meta[name="csrf-token"]').attr('content'),
-                    s: this.scope,
-                    b: this.budget,
-                })
-                .then(function (response) {
-                    console.log(response);
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
-
                 // Create the Email Link
                 axios.post('generate-link', {
                     _token: $('meta[name="csrf-token"]').attr('content'),
@@ -291,9 +260,24 @@ export default {
                 })
                 .then(function (response) {
                     console.log(response);
-                    vm.$router.push({name: 'Link', params: { code: response.data }});
                     //vm.$router.push({ path: `/get-link/${response.data}` });
 
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+
+
+                // Create the Project
+                axios.post('generate-report', {
+                    _token: $('meta[name="csrf-token"]').attr('content'),
+                    s: this.scope,
+                    b: this.budget,
+                    f: this.finalise,
+                })
+                .then(function (response) {
+                    console.log(response);
+                    vm.$router.push({name: 'Link', params: { code_id: response.data }});
                 })
                 .catch(function (error) {
                     console.log(error);
