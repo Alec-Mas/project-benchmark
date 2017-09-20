@@ -85336,7 +85336,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony default export */ __webpack_exports__["default"] = ({
     data: function data() {
         return {
-            url: "http://" + window.location.hostname + '/' + this.$route.params.code
+            url: "http://" + window.location.hostname + '/' + this.$route.params.code_id
         };
     },
 
@@ -85354,7 +85354,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
         open: function open() {
             var h = this.$createElement;
             this.$message({
-                message: h('p', null, [h('span', null, 'Unique code generated '), h('i', { style: 'color: green' }, $route.params.code)])
+                message: h('p', null, [h('span', null, 'Unique code generated '), h('i', { style: 'color: green' }, $route.params.code_id)])
             });
         }
     }

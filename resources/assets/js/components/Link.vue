@@ -46,7 +46,7 @@
     export default {
         data() {
             return {
-                url: "http://"+window.location.hostname+'/'+this.$route.params.code,
+                url: "http://"+window.location.hostname+'/'+this.$route.params.code_id,
             }
         },
 
@@ -67,7 +67,7 @@
                 this.$message({
                     message: h('p', null, [
                         h('span', null, 'Unique code generated '),
-                        h('i', { style: 'color: green' }, $route.params.code)
+                        h('i', { style: 'color: green' }, $route.params.code_id)
                     ])
                 });
             },
