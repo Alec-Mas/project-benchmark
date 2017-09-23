@@ -1,12 +1,15 @@
 <template>
     <div class="row">
-        <div class="page-title">Your own unique code</div>
-        <div class="page-subtitle">Keep it safe!</div>
-        <div class="benchmark-report">
-            <el-row>
-                <el-col :span="12" :offset="6"><div class="grid-content bg-light-orange center-block" style="padding: 5px;"><a v-bind:href="url">{{ url }}</a></div></el-col>
-            </el-row>
-        </div>
+        <el-row>
+            <el-col :span="12" :offset="6">
+                <el-alert
+                  title="Your unique URL"
+                  type="success"
+                  show-icon>
+                  <p class="el-alert__description" slot="default">{{url}}</p>
+                </el-alert>
+            </el-col>
+        </el-row>
     </div>
 </template>
 <style>
@@ -44,9 +47,10 @@
 <script>
 
     export default {
+        props: ['code'],
         data() {
             return {
-                url: "http://"+window.location.hostname+'/'+this.$route.params.code_id,
+                url: "http://"+window.location.hostname+'/'+this.code,
             }
         },
 
@@ -57,20 +61,16 @@
 
         created: function()
         {
-            console.log(this.$route);
             //open();
         },
-
         methods: {
-            open() {
-                const h = this.$createElement;
-                this.$message({
-                    message: h('p', null, [
-                        h('span', null, 'Unique code generated '),
-                        h('i', { style: 'color: green' }, $route.params.code_id)
-                    ])
-                });
-            },
+            generateReport()
+            {
+                var vm = this;
+                //url += code;
+                console.log(code);
+                //vm.$router.push({name: 'Benchmark', params: { code_id:this.$route.params.code_id, link: this.$route.params.link, projects: this.$route.params.projects  }});
+            }
         }
     }
 </script>

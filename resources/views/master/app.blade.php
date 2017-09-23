@@ -31,7 +31,7 @@
             <a class="navbar-header-button" href="https://stratejos.ai/">Learn More</a>
             <div class="navbar-header">
                 <!-- Branding Image -->
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="{{url('/')}}">
                     <img src="{{ asset('img/foot-logo.png') }}">
                 </a>
             </div>

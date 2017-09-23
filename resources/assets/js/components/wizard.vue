@@ -277,7 +277,10 @@ export default {
                 })
                 .then(function (response) {
                     console.log(response);
-                    vm.$router.push({name: 'Link', params: { code_id: response.data }});
+                    //vm.$router.push({name: 'Link', params: { code_id: response.data }});
+                    //url = "http://"+window.location.hostname+'/'+response.data,
+                    console.log("http://"+window.location.hostname+'/'+response.data);
+                    window.location.href = "http://"+window.location.hostname+'/'+response.data;
                 })
                 .catch(function (error) {
                     console.log(error);

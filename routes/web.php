@@ -19,6 +19,7 @@ Route::post('generate-report', 'ProjectController@AddProject');
 
 Route::post('generate-link', 'ProjectController@CreateLink');
 
+
 //Route::get('benchmark-report', 'ProjectController@Get');
 
 Route::get('{code}', 'ProjectController@GetReport');

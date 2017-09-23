@@ -3,8 +3,8 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
-import VueRouter from 'vue-router';
-Vue.use(VueRouter);
+//import VueRouter from 'vue-router';
+//Vue.use(VueRouter);
 
 import VueAxios from 'vue-axios';
 import axios from 'axios';
@@ -38,16 +38,19 @@ import Wizard from './components/Wizard.vue';
 import Benchmark from './components/Benchmark.vue';
 import Link from './components/Link.vue';
 
+Vue.component('wizard', require('./components/Wizard.vue'));
+Vue.component('unique-url', require('./components/Link.vue'));
+
+/*
 const routes = [
   {  path: '/', component: Wizard },
-  /*{ name: 'Benchmark', path: '/benchmark-report', component: Benchmark },*/
+  { name: 'Benchmark', path: '/get-report/:code_id', component: Benchmark, props(route) {} },
   { name: 'Link', path: '/get-link/:code_id', component: Link }
 ];
 
 const router = new VueRouter({ mode: 'history', routes: routes });
-
+*/
 new Vue ({
   el: '#app',
-  router,
-  render: h => h(App)
+  /*render: h => h(Wizard)*/
 });

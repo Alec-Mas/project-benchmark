@@ -102,6 +102,7 @@ class ProjectController extends Controller
                 ));
             }
         }
+
         if($code_id) {
             return response()->json($code_id);
         }
@@ -112,6 +113,7 @@ class ProjectController extends Controller
 
     public function GetReport($code_id) {
         $root = $_SERVER['SERVER_NAME'];
+
         $link = Link::where('code_id', '=', $code_id);
 
         $projects = Link::find($link->first()->id)->projects;
@@ -122,9 +124,11 @@ class ProjectController extends Controller
             //echo $link;
             //return view('benchmark', ['link' => $link->first()->email], ['root' => $root], ['projects' => $projects]);
             return view('benchmark')
+                ->with(['code' => $code_id])
                 ->with(['link' => $link->first()->email])
                 ->with(['root' => $root])
                 ->with(['projects' => $projects]);
+
         }
         //return response()->json($code_id);
 

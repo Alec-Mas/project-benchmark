@@ -3,6 +3,7 @@
 <div class="container">
     <div class="row">
         <div id="app">
+            <wizard></wizard>
         </div>
     </div>
 </div>
