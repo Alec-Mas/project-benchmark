@@ -1,15 +1,5 @@
 <template>
     <div class="row">
-        <el-row>
-            <el-col :span="12" :offset="6">
-                <el-alert
-                  title="Your unique URL"
-                  type="success"
-                  show-icon>
-                  <p class="el-alert__description" slot="default">{{url}}</p>
-                </el-alert>
-            </el-col>
-        </el-row>
     </div>
 </template>
 <style>
@@ -61,6 +51,10 @@
 
         created: function()
         {
+            let self = this;
+
+            self.openMessage();
+
             //open();
         },
         methods: {
@@ -70,7 +64,15 @@
                 //url += code;
                 console.log(code);
                 //vm.$router.push({name: 'Benchmark', params: { code_id:this.$route.params.code_id, link: this.$route.params.link, projects: this.$route.params.projects  }});
-            }
+            },
+            openMessage() {
+                this.$message({
+                    showClose: true,
+                    message: this.url,
+                    duration: 10000,
+                    type: 'success'
+        });
+      },
         }
     }
 </script>

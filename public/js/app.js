@@ -82859,16 +82859,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -82885,6 +82875,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     },
 
     created: function created() {
+        var self = this;
+
+        self.openMessage();
+
         //open();
     },
     methods: {
@@ -82893,6 +82887,14 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
             //url += code;
             console.log(code);
             //vm.$router.push({name: 'Benchmark', params: { code_id:this.$route.params.code_id, link: this.$route.params.link, projects: this.$route.params.projects  }});
+        },
+        openMessage: function openMessage() {
+            this.$message({
+                showClose: true,
+                message: this.url,
+                duration: 10000,
+                type: 'success'
+            });
         }
     }
 });
@@ -82904,21 +82906,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 module.exports={render:function (){var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
     staticClass: "row"
-  }, [_c('el-row', [_c('el-col', {
-    attrs: {
-      "span": 12,
-      "offset": 6
-    }
-  }, [_c('el-alert', {
-    attrs: {
-      "title": "Your unique URL",
-      "type": "success",
-      "show-icon": ""
-    }
-  }, [_c('p', {
-    staticClass: "el-alert__description",
-    slot: "default"
-  }, [_vm._v(_vm._s(_vm.url))])])], 1)], 1)], 1)
+  })
 },staticRenderFns: []}
 module.exports.render._withStripped = true
 if (false) {
