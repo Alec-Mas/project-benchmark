@@ -17,10 +17,10 @@
                           <th class="tg-yw4l">Everyone</th>
                         </tr>
                         <tr>
-                          <td class="tg-yw4l"></td>
+                          <td class="tg-yw4l">{{$selected->id}}</td>
                           <td class="tg-yw4l">Team Size</td>
-                          <td class="tg-yw4l"></td>
-                          <td class="tg-yw4l"></td>
+                          <td class="tg-yw4l">{{$selected->project_size}}</td>
+                          <td class="tg-yw4l">{{$selected->project_industry}}</td>
                           <td class="tg-yw4l"></td>
                         </tr>
                         <tr>
@@ -66,10 +66,12 @@
                         </tr>
                     </table>
                 </div>
+                <div class="page-subtitle">Your projects</div>
                 <div class="benchmark-project">
                     <table class="table table-responsive table-hover">
                         <thead>
                             <tr>
+                                <th>ID</th>
                                 <th>Name</th>
                                 <th>Industry</th>
                                 <th>Team</th>
@@ -83,6 +85,7 @@
                         </thead>
                         @foreach ($projects as $p)
                         <tr>
+                            <td>{{ $p->id }}</td>
                             <td>{{ $p->project_name }}</td>
                             <td>{{ $p->project_industry }}</td>
                             <td>{{ $p->project_size }}</td>
@@ -92,6 +95,7 @@
                             <td>{{ $p->project_budget }}</td>
                             <td>{{ $p->project_actual_budget }}</td>
                             <td>
+                                <a href="#" class="btn btn-success btn-sm"><span class="glyphicon glyphicon-search"></span></a>
                                 <a href="#" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash"></span></a>
                             </td>
                         </tr>

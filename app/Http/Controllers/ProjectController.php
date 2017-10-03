@@ -118,6 +118,18 @@ class ProjectController extends Controller
 
         $projects = Link::find($link->first()->id)->projects;
         //echo $projects;
+        $highest_id = 0;
+
+
+        // Grab the most recent project created.
+        foreach($projects as $value)
+            if($value->id >= $highest_id)
+                $highest_id = $value->id;
+
+        // Retrieve that project
+        $selected = Project::find($highest_id);
+
+        // Crunch the numbers
 
         if($link->count() === 1) {
             //return redirect($link->first()->url);
@@ -127,6 +139,7 @@ class ProjectController extends Controller
                 ->with(['code' => $code_id])
                 ->with(['link' => $link->first()->email])
                 ->with(['root' => $root])
+                ->with(['selected' => $selected])
                 ->with(['projects' => $projects]);
 
         }
