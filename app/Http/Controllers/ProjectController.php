@@ -128,6 +128,7 @@ class ProjectController extends Controller
 
         // Retrieve that project
         $selected = Project::find($highest_id);
+		$sid = $selected->{'id'};
 		
 		//Current Project->
 		$current_industry = $selected->{'project_industry'};
@@ -151,9 +152,9 @@ class ProjectController extends Controller
 		$budget_all_comp = $over_under - $over_under_all;
 		
 		//Need the start and expected finish dates of the current project
-		$current_start = Project::find($selected)->pluck('project_start');
-		$current_end = Project::find($selected)->pluck('project_end');
-		$project_actual_end = Project::find($selected)->pluck('project_actual_end');
+		$current_start = Project::where('id',$sid)->pluck('project_start');
+		$current_end = Project::where('id',$sid)->pluck('project_end');
+		$project_actual_end = Project::where('id',$sid)->pluck('project_actual_end');
 		
 		$current_start_day = substr($current_start,10,2);
 		$current_start_month = substr($current_start,7,2);
