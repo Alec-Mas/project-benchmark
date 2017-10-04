@@ -67,6 +67,6 @@
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
     <script src="{{ asset('js/all.js') }}" type="text/javascript"></script>
-
+@include('analytic')
 </body>
 </html>
