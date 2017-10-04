@@ -101,7 +101,7 @@
                         </thead>
                         @foreach ($projects as $p)
                         <tr>
-							@if ($p->code_id == $selected->code_id)
+							@if (intval($p->code_id) == intval($selected->code_id))
 								<td>{{ $p->id }}</td>
 								<td>{{ $p->project_name }}</td>
 								<td>{{ $p->project_industry }}</td>
