@@ -79,36 +79,41 @@ class ProjectController extends Controller
 
     public function CreateLink(Request $request) {
 
+        // Fetch the email address
         $email = $request['f']['email'];
         $code_id = null;
-
         $multiplier = 1000000;
 
+        // Fetch the Link object using the email as a query
         $exists = Link::where('email', '=', $email);
 
+        // Check if it already exists
         if($exists->count() === 1) {
+            // If it does exist, then return with the unique URL
             $code_id = $exists->first()->code_id;
         }
+        // Otherwise make a new Unique URL
         else
         {
+            // Create the Link with only the email field.
             $created = Link::create(array(
                 'email' => $email
             ));
-
+            // If the creation was successful
             if($created) {
+                // Generate a code using a base conversion, multiplying the ID with the Multiplier
                 $code_id = base_convert($created->id+$multiplier, 10, 36);
+                // Append the Database with the new unique ID
                 Link::where('id', '=', $created->id)->update(array(
                     'code_id' => $code_id
                 ));
             }
         }
 
+        // Return the ID
         if($code_id) {
             return response()->json($code_id);
         }
-
-        //return view('welcome')
-            //->with('global', 'Whoops, something went wrong');
     }
 
     public function GetReport($code_id) {
@@ -129,12 +134,12 @@ class ProjectController extends Controller
         // Retrieve that project
         $selected = Project::find($highest_id);
 		$sid = $selected->{'id'};
-		
+
 		//Current Project->
 		$current_industry = $selected->{'project_industry'};
 		$avg_ind_size = Project::where('project_industry',$current_industry)->avg('project_size');
 		$avg_all_size = Project::avg('project_size');
-		
+
 		// budgets
 		$budget = $selected->{'project_budget'};
 		$budget_actual = $selected->{'project_actual_budget'};
@@ -144,33 +149,33 @@ class ProjectController extends Controller
 		$avg_ind_actual_budget = Project::where('project_industry',$current_industry)->avg('project_actual_budget');
 		$over_under_ind = ($avg_ind_actual_budget - $avg_ind_budget)/$avg_ind_budget * 100;
 		$budget_ind_comp = $over_under - $over_under_ind;
-		
+
 		//all budget
 		$avg_all_budget = Project::avg('project_budget');
 		$avg_all_actual_budget = Project::avg('project_actual_budget');
 		$over_under_all = ($avg_all_actual_budget - $avg_all_budget)/$avg_all_budget * 100;
 		$budget_all_comp = $over_under - $over_under_all;
-		
+
 		//Need the start and expected finish dates of the current project
 		$current_start = Project::where('id',$sid)->pluck('project_start');
 		$current_end = Project::where('id',$sid)->pluck('project_end');
 		$project_actual_end = Project::where('id',$sid)->pluck('project_actual_end');
-		
+
 		$current_start_day = substr($current_start,10,2);
 		$current_start_month = substr($current_start,7,2);
 		$current_start_year = substr($current_start,2,4);
 		$current_start_full = $current_start_year ."-". $current_start_month ."-". $current_start_day;
-		
+
 		$current_end_day = substr($current_end,10,2);
 		$current_end_month = substr($current_end,7,2);
 		$current_end_year = substr($current_end,2,4);
 		$current_end_full = $current_end_year ."-". $current_end_month ."-". $current_end_day;
-		
+
 		$date1 = date_create($current_start_full);
 		$date2 = date_create($current_end_full);
 		$diff = $date2->diff($date1);
 		$current_days_expected = $diff->format('%a');
-		
+
 		$current_actual_end_day = substr($project_actual_end,10,2);
 		$current_actual_end_month = substr($project_actual_end,7,2);
 		$current_actual_end_year = substr($project_actual_end,2,4);
@@ -181,13 +186,13 @@ class ProjectController extends Controller
 		$diff = $date2->diff($date1);
 		$current_actual_days = $diff->format('%a');
 		$diff_in_days = ($current_actual_days - $current_days_expected)/$current_days_expected * 100;
-		
+
 		$total_ind_days_expected = 0;
 		$total_records = 0;
 		$projects = Project::all();
 
 		foreach ($projects as $id)
-		{	
+		{
 			$ind = $id->{'project_industry'};
 			if ((string)$current_industry === (string)$ind)
 			{
@@ -208,7 +213,7 @@ class ProjectController extends Controller
 				$date2 = date_create($end_full);
 				$diff = $date2->diff($date1);
 				$days_expected = $diff->format('%a');
-			
+
 				$total_ind_days_expected = $total_ind_days_expected + $days_expected;
 				$total_records = $total_records + 1;
 			}
@@ -217,7 +222,7 @@ class ProjectController extends Controller
 		$total_all_days_expected = 0;
 		$total_records = 0;
 		foreach ($projects as $id)
-		{	
+		{
 			$start = $id->{'project_start'};
 			$end = $id->{'project_end'};
 
@@ -246,7 +251,7 @@ class ProjectController extends Controller
 		$total_ind_days_actual = 0;
 		$total_records = 0;
 		foreach ($projects as $id)
-		{	
+		{
 			$ind = $id->{'project_industry'};
 			if((string)$ind == (string)$current_industry)
 			{
@@ -267,18 +272,18 @@ class ProjectController extends Controller
 				$date2 = date_create($end_full);
 				$diff = $date2->diff($date1);
 				$days_actual = $diff->format('%a');
-			
+
 				$total_ind_days_actual = $total_ind_days_actual + $days_actual;
 				$total_records = $total_records + 1;
 			}
 		}
 		$avg_ind_days_actual = ($total_ind_days_actual + $current_actual_days) / ($total_records + 1);
-		
+
 		$avg_all_days_actual = 0;
 		$total_all_days_actual = 0;
 		$total_records = 0;
 		foreach ($projects as $id)
-		{	
+		{
 			$start = $id->{'project_start'};
 			$end = $id->{'project_actual_end'};
 
@@ -308,8 +313,8 @@ class ProjectController extends Controller
 		$diff_in_days_all = ($avg_all_days_actual - $avg_all_days_expected)/$avg_all_days_expected * 100;
 		$percentAboveInd = $diff_in_days_ind - $diff_in_days;
 		$percentAboveAll = $diff_in_days_all - $diff_in_days;
-		
-		
+
+
         if($link->count() === 1) {
             //return redirect($link->first()->url);
             //echo $link;

@@ -41,16 +41,6 @@ import Link from './components/Link.vue';
 Vue.component('wizard', require('./components/Wizard.vue'));
 Vue.component('unique-url', require('./components/Link.vue'));
 
-/*
-const routes = [
-  {  path: '/', component: Wizard },
-  { name: 'Benchmark', path: '/get-report/:code_id', component: Benchmark, props(route) {} },
-  { name: 'Link', path: '/get-link/:code_id', component: Link }
-];
-
-const router = new VueRouter({ mode: 'history', routes: routes });
-*/
 new Vue ({
   el: '#app',
-  /*render: h => h(Wizard)*/
 });
