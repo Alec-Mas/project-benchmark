@@ -144,7 +144,7 @@
 
                     </table>
                     </div>
-                    <button type="button" class="btn btn-primary btn-lg pull-right" style="background-color: #F57421; border-color: white;"><a href="{{url('/')}}" style="color: white;">Add Another Project</a></button>
+                    <button type="button" class="btn btn-primary btn-lg pull-right" style="background-color: #F57421; border-color: white; margin-top: 10px;"><a href="{{url('/')}}" style="color: white;">Add Another Project</a></button>
 
                 </div>
             </div>
