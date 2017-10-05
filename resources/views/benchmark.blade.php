@@ -27,7 +27,6 @@
                           <td class="tg-yw4l" style="background-color: green; color: white;">{{$selected->project_size}}</td>
                           @endif
                           <td class="tg-yw4l">{{number_format($avg_ind_size, 2)}}</td>
-                          <td class="tg-yw4l">{{number_format($avg_ind_size, 2)}}</td>
                           <td class="tg-yw4l">{{number_format($avg_all_size, 2)}}</td>
                         </tr>
                         <tr>
@@ -38,7 +37,6 @@
                           @else
                           <td class="tg-yw4l" style="background-color: green; color: white;">{{$current_days_expected}}</td>
                           @endif
-                          <td class="tg-yw4l">{{number_format($avg_ind_days_expected, 2)}}</td>
                           <td class="tg-yw4l">{{number_format($avg_ind_days_expected, 2)}}</td>
                           <td class="tg-yw4l">{{number_format($avg_all_days_expected, 2)}}</td>
                         </tr>
