@@ -106,6 +106,7 @@
                 </div>
                 <div class="page-subtitle">Your projects</div>
                 <div class="benchmark-project">
+                    <div class="table-responsive">
                     <table class="table table-responsive table-hover">
                         <thead>
                             <tr>
@@ -142,7 +143,7 @@
                         @endforeach
 
                     </table>
-
+                    </div>
                     <button type="button" class="btn btn-primary btn-lg pull-right" style="background-color: #F57421; border-color: white;"><a href="{{url('/')}}" style="color: white;">Add Another Project</a></button>
 
                 </div>

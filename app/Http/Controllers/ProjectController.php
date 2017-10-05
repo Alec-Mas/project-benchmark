@@ -117,6 +117,12 @@ class ProjectController extends Controller
     }
 
     public function GetReport($code_id) {
+        $exists = Link::where('code_id', '=', $code_id);
+        if($exists->count() === 0) {
+            // Return 43A047
+            return view('404');
+        }
+
         $root = $_SERVER['SERVER_NAME'];
 
         $link = Link::where('code_id', '=', $code_id);
